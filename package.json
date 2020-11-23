@@ -10,7 +10,12 @@
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+<<<<<<< HEAD
     "react-scripts": "^4.0.1",
+=======
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+>>>>>>> 76840b77e342c376db2a36df85e3b484cf8ae53d
     "sass": "^1.29.0",
     "web-vitals": "^0.2.4"
   },
