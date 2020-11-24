@@ -39,14 +39,11 @@ class GetDataFromExcelJusTInput extends Component {
           })
         })
         // console.log(hojas);
-        const newElements = [];
-        console.log(hojas[0]);
-        hojas[0].data.map((ele) => {
-            console.log(ele)
-            newElements.push(ele);
-            return newElements;
-        });
-
+        // const newElements = [];
+        // hojas[0].data.map((ele) => {
+        //     newElements.push(ele);
+        //     return newElements;
+        // });
         this2.setState({
           selectedFileDocument: target.files[0],
           hojas
@@ -59,7 +56,6 @@ class GetDataFromExcelJusTInput extends Component {
       handleInputChange,
     } = this
     const hojas = this.state.hojas;
-    const file = this.state.file;
     return (
         <div>
             <input 
@@ -70,8 +66,7 @@ class GetDataFromExcelJusTInput extends Component {
                 onChange={handleInputChange} 
                 placeholder="Archivo de excel" 
             />
-            {file && <Initiative sheets={hojas} />}
-            {/* <Initiative { ...file ? sheets={hojas} : null} /> */}
+            {hojas && <Initiative sheets={hojas} />}
         </div>
     );
   }
