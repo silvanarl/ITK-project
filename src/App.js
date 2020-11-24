@@ -1,13 +1,21 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Login from './views/Login';
+import Menu from './views/Menu';
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        Interbank
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Login />
+        </Route>
+        <Route exact path="/menu">
+          <Menu />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
