@@ -1,10 +1,11 @@
 import React from 'react';
+import Navbar from '../components/general/Navbar';
 
 const Menu = () => {
     return (
-        <div>
-            <h2>Hola Interkunaq</h2>
-        </div>
+        <React.Fragment>
+            <Navbar />
+        </React.Fragment>
     )
 };
 
