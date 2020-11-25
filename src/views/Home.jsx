@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import * as XLSX from 'xlsx';
 import './home.css';
-import {Navbar, Header} from '../components/general/Navbar';
+import { Header, Navbar} from '../components/general/Navbar';
 import Initiative from '../components/Initiative';
 import Status from '../components/Status';
+// import ChangeView from '../components/ChangeViewByNav';
 
     class GetDataFromExcelJusTInput extends Component {
         constructor(props) {
