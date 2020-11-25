@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Menu = () => {
+const Summary = () => {
     return (
         <div>
-            <h2>Hola Interkunaq</h2>
+            Summary
         </div>
     )
 };
 
-export default Menu;
+export default Summary;
