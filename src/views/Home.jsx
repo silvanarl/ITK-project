@@ -3,6 +3,7 @@ import * as XLSX from 'xlsx';
 import './home.css';
 import {Navbar, Header} from '../components/general/Navbar';
 import Initiative from '../components/Initiative';
+import Status from '../components/Status';
 
     class GetDataFromExcelJusTInput extends Component {
         constructor(props) {
@@ -86,6 +87,7 @@ const Home = () => {
                     <h4 className="upload-title">Subir iniciativa</h4>
                     <GetDataFromExcelJusTInput />
                 </div>
+                <Status />
             </div>
         </div>
     )

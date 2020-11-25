@@ -11,7 +11,7 @@ const Iniative = (props) => {
         status: '',
         leader: sheets[0].data[4].__EMPTY_9,
         name: sheets[0].data[3].__EMPTY_11,
-        relelase_date: '',
+        release_date: '',
         request_area: sheets[0].data[4].__EMPTY_32,
         responsible_manager: sheets[0].data[5].__EMPTY_10,
         target: sheets[0].data[11].__EMPTY_2,
