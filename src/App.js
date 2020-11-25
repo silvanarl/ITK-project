@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Login from './views/Login';
-import Menu from './views/Menu';
+import Home from './views/Home';
 
 const App = () => {
   return (
@@ -11,8 +11,8 @@ const App = () => {
         <Route exact path="/">
           <Login />
         </Route>
-        <Route exact path="/menu">
-          <Menu />
+        <Route exact path="/home">
+          <Home />
         </Route>
       </Switch>
     </Router>

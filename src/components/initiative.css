@@ -1,0 +1,26 @@
+.container-initiative{
+    display: flex;
+    flex-direction: column;
+    font-family: "Geometria-Regular";
+    font-weight: 500;
+}
+.form-input{
+    width: 23rem;
+    height: 1.5rem;
+}
+.form-container-input{
+    padding-bottom: 0.5rem;
+    border-color: #AEA9A9;
+}
+.form-submit-button{
+    background-color: #05BE50;
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.form-title{
+    margin-top:.8rem;
+    margin-bottom: .7rem;
+    font-size: larger;
+}
