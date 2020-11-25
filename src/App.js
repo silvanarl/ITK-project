@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Login from './views/Login';
 import Home from './views/Home';
-import Search from './components/general/Search';
+//import Search from './components/general/Search';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Login />,
-          <Search/>
+         
         </Route>
         <Route exact path="/home">
           <Home />
