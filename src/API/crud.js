@@ -21,8 +21,8 @@ export const getAllInitiatives = () => {
             arrInitiatives.push(doc.data())
             console.log(doc.data());
         });
+        console.log(arrInitiatives);
         return arrInitiatives;
     })
-    .catch(error => console.log('ocurrio un error', error)
-    );
+
 };
