@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Style from './navbar.module.css';
 import {Link} from 'react-router-dom';
 import { getAllInitiatives } from '../../API/crud';
-// import logoInterbank from '../../assets/SVG/logo-interbank.svg'
+// import firebase from '../../firebase.config';
+
+// const db = firebase.firestore();
 
 export const Header = () => {
     return (
@@ -20,10 +22,23 @@ export const Header = () => {
 export const Navbar = ()=>{
     const [allInitiatives, setAllInitiatives] = useState([]);
     
+    // const getAllInitiatives = () => { 
+    //     db
+    //     .collection('initiatives')
+    //     .get()
+    //     .then((querySnapshot) => {
+    //         const arrInitiatives = [];
+    //         querySnapshot.forEach((doc) => {
+    //             arrInitiatives.push(doc.data())
+    //             console.log(doc.data());
+    //         });
+    //         console.log(arrInitiatives);
+    //         return arrInitiatives;
+    //     })
+    
+    // };
     useEffect(() => {
-        getAllInitiatives().then((arr) =>{
-            setAllInitiatives(arr)
-        })
+        getAllInitiatives().then((arr) => setAllInitiatives(arr))
     }, []);
     console.log(allInitiatives);
     console.log(getAllInitiatives());
