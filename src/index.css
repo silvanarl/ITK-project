@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 @font-face{
   font-family: "Geometria-Regular";
   src: url("./assets/Geometria-Regular.ttf");
@@ -9,7 +7,6 @@
 *{
   font-family: "Geometria-Regular";
 }
->>>>>>> dc8501fd3f9e9bab9350e0a484c4c4a00eefd98d
 
 body {
   margin: 0;

@@ -11,18 +11,21 @@ export const sendInitiative = (obj) => db
     console.log('Ocurrió un error al enviar', error);
     });
 
-export const getAllInitiatives = () => { 
+export const getAllInitiatives = (callback) =>
     db
     .collection('initiatives')
-    .get()
-    .then((querySnapshot) => {
-        const arrInitiatives = [];
-        querySnapshot.forEach((doc) => {
-            arrInitiatives.push(doc.data())
-            console.log(doc.data());
-        });
-        console.log(arrInitiatives);
-        return arrInitiatives;
-    })
-
-};
+    .onSnapshot((querySnapshot) => {
+      const arrInitiatives = [];
+      querySnapshot.forEach((doc) => {
+          const objInitiative = {
+            id: doc.id,
+            name: doc.data().name,
+            description: doc.data().description,
+            request_area: doc.data().request_area,
+            leader: doc.data().leader
+          }
+        arrInitiatives.push(objInitiative);
+      });
+      callback(arrInitiatives);
+    });
+    
