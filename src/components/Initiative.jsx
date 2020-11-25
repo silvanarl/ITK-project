@@ -33,10 +33,7 @@ const Iniative = (props) => {
         const { name, value } = e.target;
         console.log(e.target.value);
         setInitiative({ ...initiative, [name]: value });
-    };
-    // const updateApplicationNumber = () => {
-
-    // };    
+    };   
     
     const sendToDb= (obj) => {
         sendInitiative(obj);

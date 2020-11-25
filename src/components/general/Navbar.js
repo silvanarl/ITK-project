@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Style from './navbar.module.css';
 import {Link} from 'react-router-dom';
+import { getAllInitiatives } from '../../API/crud';
 // import logoInterbank from '../../assets/SVG/logo-interbank.svg'
 
 export const Header = () => {
@@ -17,16 +18,26 @@ export const Header = () => {
 };
 
 export const Navbar = ()=>{
+    const [allInitiatives, setAllInitiatives] = useState([]);
+    
+    useEffect(() => {
+        getAllInitiatives().then((arr) =>{
+            setAllInitiatives(arr)
+        })
+    }, []);
+    console.log(allInitiatives);
+    console.log(getAllInitiatives());
+
     return(
         <nav className={`navbar fixed-bottom ${Style.nav}`}>
             <div className={`navbar-list ${Style.navList}`}>
                 <Link className={`nav-link ${Style.navBtn}`} to='/Background'><button className={`nav-button ${Style.navBtn}`}>Subir Iniciativa</button></Link>
                 <Link className="nav-link" to='/Initiatives'><button className={`nav-button ${Style.navBtn}`}>Iniciativas</button></Link>
-                <Link className="nav-link" to='/'><button className={`nav-button ${Style.navBtn}`}>Tunki</button></Link>
+                {/* <Link className="nav-link" to='/'><button className={`nav-button ${Style.navBtn}`}>Tunki</button></Link>
                 <Link className="nav-link" to='/Announcement'><button className={`nav-button ${Style.navBtn}`}>Convocatoria workshop</button></Link>
                 <Link className="nav-link" to='/Workshop'><button className={`nav-button ${Style.navBtn}`}>Workshop</button></Link>
                 <Link className="nav-link" to='/Summary'><button className={`nav-button ${Style.navBtn}`}>Resumen workshop</button></Link>
-                <Link className="nav-link" to='/Committee'><button className={`nav-button ${Style.navBtn}`}>Comité ERCP</button></Link>
+                <Link className="nav-link" to='/Committee'><button className={`nav-button ${Style.navBtn}`}>Comité ERCP</button></Link> */}
                 <Link className="nav-link" to='/LogOut'><button className={`nav-button ${Style.navBtn}`}>Salir</button></Link>
             </div>
         </nav>

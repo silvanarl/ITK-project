@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './statusNav.css';
+
 
 export default function StatusNav(props) {
   const { setView } = props;
@@ -20,3 +22,7 @@ export default function StatusNav(props) {
     </ul>
   );
 }
+
+StatusNav.propTypes = {
+  setView: PropTypes.func.isRequired,
+ };

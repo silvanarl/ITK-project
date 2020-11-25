@@ -10,3 +10,19 @@ export const sendInitiative = (obj) => db
     .catch((error) => {
     console.log('Ocurrió un error al enviar', error);
     });
+
+export const getAllInitiatives = () => { 
+    db
+    .collection('initiatives')
+    .get()
+    .then((querySnapshot) => {
+        const arrInitiatives = [];
+        querySnapshot.forEach((doc) => {
+            arrInitiatives.push(doc.data())
+            console.log(doc.data());
+        });
+        return arrInitiatives;
+    })
+    .catch(error => console.log('ocurrio un error', error)
+    );
+};
