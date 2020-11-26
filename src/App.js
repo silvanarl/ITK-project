@@ -78,7 +78,7 @@ const App = () => {
         >
           <Status />
         </LoggedInRoute>
-        <Route exact path="/initiative:id">
+        <Route exact path="/home/initiative:id">
           <InitiativeStatus />
         </Route>
       </Switch>

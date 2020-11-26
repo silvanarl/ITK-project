@@ -15,7 +15,7 @@ const InitiativesCard = ({allInitiatives}) => {
                 {allInitiatives.map((ele) => (
                     <div className="individual-card" key={ele.id}>
                         <span className="number">{ele.application_number}</span>
-                        <Link to={`/initiative:${ele.id}`}><span className="name">{ele.name}</span></Link>
+                        <Link to={`/home/initiative:${ele.id}`}><span className="name">{ele.name}</span></Link>
                         <p className="description">{ele.description}</p>
                         <div className="tags-box">{ele.tags.map((tag, index) =>(
                             <span className="tag-card" key={index}>{tag}</span>
