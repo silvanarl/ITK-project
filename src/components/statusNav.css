@@ -1,0 +1,8 @@
+.status-nav li{
+    display: flex;
+    border: 1px solid #000;
+    list-style: none;
+}
+.status-nav{
+    display: flex;
+}

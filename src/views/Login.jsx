@@ -2,7 +2,25 @@ import React, { useState } from 'react';
 import Style from './login.module.css'
 import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import interkunaq from '../assets/interkunaq.jpeg';
+>>>>>>> 16ddfab5a10f9a8e80bac4367cca8112f649924c
 import { signIn } from '../API/auth';
+import '../components/general/loginStyled.css';
+import firebase from '../firebase.config.js'; 
+import 'firebase/storage';
+
+const storage = firebase.storage()
+console.log (storage)
+let pathReference = storage.ref('assets');
+
+let spaceRef =  pathReference.child('img-banner.png').getDownloadURL().then(url => {
+let url2=url 
+
+return url2})
+console.log(spaceRef)
+
 
 const Login = () => {
   const history = useHistory();
@@ -10,7 +28,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
-
+  
   function handleChange(e) {
     setPassword(e.target.value);
     if (e.target.value.length > 4) {
@@ -19,7 +37,6 @@ const Login = () => {
       setDisabled(true);
     }
   }
-
   const loginSubmit = (event) => {
     event.preventDefault();
         console.log(email);
@@ -70,11 +87,14 @@ const Login = () => {
                 Ingresar
             </button>
             </div>
-        </form>
+          </form>
         </main>
         </div>
         <div className={`${Style.banner}`}></div>
       </div>
+      //</section>
+
+      
   );
 };
 

@@ -1,0 +1,19 @@
+.container-cards{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.individual-card{
+    border: 1px solid #0039A6;
+    border-radius: 4px;
+    max-width: 75%;
+    font-size: small;
+    padding: .5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+.tag-card{
+    background-color: #05BE50;
+    margin:0.3rem;
+}

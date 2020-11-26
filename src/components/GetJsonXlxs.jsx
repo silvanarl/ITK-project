@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import * as XLSX from 'xlsx';
+import './getJsonXlxs.css';
 import FormInitiative from './FormInitiative';
-
 
 class GetDataFromExcelJusTInput extends Component {
     constructor(props) {
@@ -38,12 +38,6 @@ class GetDataFromExcelJusTInput extends Component {
             sheetName
           })
         })
-        // console.log(hojas);
-        // const newElements = [];
-        // hojas[0].data.map((ele) => {
-        //     newElements.push(ele);
-        //     return newElements;
-        // });
         this2.setState({
           selectedFileDocument: target.files[0],
           hojas
@@ -58,14 +52,23 @@ class GetDataFromExcelJusTInput extends Component {
     const hojas = this.state.hojas;
     return (
         <div>
-            <input 
-                required 
-                type="file" 
-                name="file" 
-                id="file" 
-                onChange={handleInputChange} 
-                placeholder="Archivo de excel" 
-            />
+            <span className="file">
+                <input 
+                    required 
+                    type="file" 
+                    name="file" 
+                    id="file" 
+                    className="form-input-file"
+                    onChange={handleInputChange} 
+                    placeholder="Archivo de excel" 
+                    accept="xls, xlsx."
+                />
+            </span>
+            <label htmlFor="file">
+                <span>
+                    Seleccionar archivo
+                </span>
+            </label>
             {hojas && <FormInitiative sheets={hojas} />}
         </div>
     );
