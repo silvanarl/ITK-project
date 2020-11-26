@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { Header, Navbar} from '../components/general/Navbar';
 import { getAllInitiatives } from '../API/crud';
-import ChangeView from '../components/ChangeViewByNav';
+import Status from '../components/Status';
+// import ChangeView from '../components/ChangeViewByNav';
 
     
-const Home = () => {
+const InitiativeStatus = () => {
   const [view, setView] = useState('');
   const [allInitiatives, setAllInitiatives] = useState([]);
     
@@ -17,10 +18,12 @@ const Home = () => {
             <Header />
             <div className="home-container-main">
                 <Navbar setView={setView} />
-                <ChangeView view={view} allInitiatives={allInitiatives} />
+                {/* <ChangeView view={view} allInitiatives={allInitiatives} /> */}
+                <Status view={view} allInitiatives={allInitiatives} />
             </div>
         </div>
     )
 };
 
-export default Home;
+export default InitiativeStatus;
+
