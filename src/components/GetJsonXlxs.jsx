@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as XLSX from 'xlsx';
-// import '../home.css';
-import Initiative from '../components/Initiative';
+import './getJsonXlxs.css';
+import FormInitiative from './FormInitiative';
 
 class GetDataFromExcelJusTInput extends Component {
     constructor(props) {
@@ -69,7 +69,7 @@ class GetDataFromExcelJusTInput extends Component {
                     Seleccionar archivo
                 </span>
             </label>
-            {hojas && <Initiative sheets={hojas} />}
+            {hojas && <FormInitiative sheets={hojas} />}
         </div>
     );
   }

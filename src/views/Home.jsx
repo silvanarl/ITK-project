@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import './home.css';
 import { Header, Navbar} from '../components/general/Navbar';
 import { getAllInitiatives } from '../API/crud';
 import ChangeView from '../components/ChangeViewByNav';

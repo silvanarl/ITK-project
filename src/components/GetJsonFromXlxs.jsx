@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import * as XLSX from 'xlsx';
-import Initiative from './Initiative';
+import FormInitiative from './FormInitiative';
 
 
 class GetDataFromExcelJusTInput extends Component {
@@ -66,7 +66,7 @@ class GetDataFromExcelJusTInput extends Component {
                 onChange={handleInputChange} 
                 placeholder="Archivo de excel" 
             />
-            {hojas && <Initiative sheets={hojas} />}
+            {hojas && <FormInitiative sheets={hojas} />}
         </div>
     );
   }

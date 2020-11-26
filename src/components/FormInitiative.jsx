@@ -1,9 +1,9 @@
-import React,  { useState, useEffect } from 'react';
+import React,  { useState} from 'react';
 import PropTypes from 'prop-types';
-import './initiative.css';
+import './formInitiative.css';
 import { sendInitiative } from '../API/crud';
 
-const Iniative = (props) => {
+const FormInitiative = (props) => {
     const { sheets } = props;
     console.log(sheets);
     const initialState = {
@@ -24,11 +24,12 @@ const Iniative = (props) => {
         tags:[],
         comments: [],
         notes: [],
+        type_of_change:''
     };
     const [initiative, setInitiative] = useState(initialState);  
-    useEffect(() => {
-        console.log('render1');
-    }, []);
+    // useEffect(() => {
+    //     console.log('render1');
+    // }, []);
 
     const updateValue = (e) => {
         const { name, value } = e.target;
@@ -38,31 +39,29 @@ const Iniative = (props) => {
     const comma = ',';
     
     const separateString = (string, separator) => string.split(separator);
-    console.log(separateString('juana,maria,pedro', comma));
+
     const updateArray = (e) => {
         const { name } = e.target;
         const valueString = e.target.value;
-        console.log(valueString);
         const newValue = separateString(valueString, comma);
-        console.log(newValue)
         setInitiative({ ...initiative, [name]: newValue });
     };
 
     const sendToDb= (obj) => {
         sendInitiative(obj);
-        setInitiative({...initialState})
+        return setInitiative({...initialState})
     };
     return (
         <div className="container-initiative">
             <h3 className="form-title">Información de la iniciativa:</h3>
-            <form action="">
+            <form action="" name="formInitiative">
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Nº de Solicitud: </label>
                     <input className="form-input" type="text" name="application_number" onChange={(e)=> updateValue(e)} />
                 </div>
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Nombre de la Iniciativa: </label>
-                    <input className="form-input" type="text" name="name" value={initiative.name} />
+                    <input className="form-input" type="text" name="name" value={initiative.name} onChange={(e)=> updateValue(e)} />
                 </div>
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Fecha aproximada de Lanzamiento: </label>
@@ -70,7 +69,7 @@ const Iniative = (props) => {
                 </div>
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Líder / Responsable: </label>
-                    <input className="form-input" type="text" name="leader" value={initiative.leader} />
+                    <input className="form-input" type="text" name="leader" value={initiative.leader} onChange={(e)=> updateValue(e)} />
                 </div>
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Asignar abogados a esta iniciativa: </label>
@@ -79,6 +78,14 @@ const Iniative = (props) => {
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Agregar tags a esta iniciativa: </label>
                     <input className="form-input" placeholder="Ejemplo: pagos móviles, tarjetas de crédito" type="text" name="tags" onChange={(e)=> updateArray(e)}/>
+                </div>
+                <div className="flex-column form-container-input">
+                    <label htmlFor="">Qué tipo de cambio es esta iniciativa: </label>
+                    <select onChange={(e)=> updateValue(e)} name="type_of_change" id="">
+                        <option value="Cambio menor">Cambio Menor</option>
+                        <option value="Cambio importante">Cambio Importante</option>
+                        <option value="Nuevo producto">Nuevo Producto</option>
+                    </select>
                 </div>
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Agregar enlace a ppt de la iniciativa: </label>
@@ -94,7 +101,7 @@ const Iniative = (props) => {
     )
 };
 
-Iniative.propTypes = {
+FormInitiative.propTypes = {
    sheets: PropTypes.arrayOf(PropTypes.object).isRequired,
   };
-export default Iniative;
+export default FormInitiative;

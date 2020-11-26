@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InitiativesCard from './InitiativesCard';
+import InitiativesCard from './Initiatives';
 import GetJsonXlxs from './GetJsonXlxs';
 import Indicators from './Indicators';
 

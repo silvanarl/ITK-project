@@ -1,8 +1,9 @@
 .nav{
     left: 0;
-    width: 12rem;
+    min-width: 12rem;
     height: 90vh;
-    background-color: #05BE50;
+    background-color: #05be4f9c;
+    border-bottom-right-radius: 60px;
 }
 button{
     border:none;
@@ -15,23 +16,28 @@ button{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    background-color: #05BE50;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #999;
+    margin-bottom: 3px;
 }
 
 .burgerBox{
     margin: 42px;
 }
 
-.logoBox{
+/* .logoBox{
     margin-right: 42px;
     margin-top: 25px;
     background: #00A74F;
     height: 8vh;
     width: 235px;
-}
+} */
 
 .logo{
-    width: 90%;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navList{
@@ -45,6 +51,9 @@ button{
     font-family: "Geometria-Regular";
     color: #fff;
     border-bottom: 1px solid #fff;
+}
+.navBtn:hover{
+    background-color: #05BE50;
 }
 .nav-link{
     width: 100%;
