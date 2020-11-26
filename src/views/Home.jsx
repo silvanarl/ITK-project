@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import * as XLSX from 'xlsx';
 import './home.css';
-import { Header} from '../components/general/Navbar';
-import Navbar from '../components/general/Navbar';
+import { Header, Navbar} from '../components/general/Navbar';
 import Initiative from '../components/Initiative';
 import Status from '../components/Status';
+import Search from '../components/Search';
+// import ChangeView from '../components/ChangeViewByNav';
 
     class GetDataFromExcelJusTInput extends Component {
         constructor(props) {
@@ -73,6 +74,7 @@ import Status from '../components/Status';
                     </span>
                 </label>
                 {hojas && <Initiative sheets={hojas} />}
+                <Search/>
             </div>
         );
       }

@@ -11,7 +11,7 @@ export const sendInitiative = (obj) => db
     console.log('Ocurrió un error al enviar', error);
     });
 
-    export const getAllInitiatives = (callback) =>
+export const getAllInitiatives = (callback) =>
     db
     .collection('initiatives')
     .onSnapshot((querySnapshot) => {
@@ -28,3 +28,4 @@ export const sendInitiative = (obj) => db
       });
       callback(arrInitiatives);
     });
+    

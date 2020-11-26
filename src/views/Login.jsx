@@ -5,6 +5,7 @@ import { signIn } from '../API/auth';
 import '../components/general/loginStyled.css';
 import firebase from '../firebase.config.js'; 
 import 'firebase/storage';
+
 const storage = firebase.storage()
 console.log (storage)
 

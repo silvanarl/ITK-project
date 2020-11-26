@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Style from './navbar.module.css';
-import {Link} from 'react-router-dom';
-import { getAllInitiatives } from '../../API/crud';
 
-// const db = firebase.firestore();
+import React, { useState, useEffect }from 'react';
+import PropTypes from 'prop-types';
+import Style from './navbar.module.css';
+// import {Link} from 'react-router-dom';
+import { getAllInitiatives } from '../../API/crud';
 
 export const Header = () => {
     return (
@@ -18,33 +18,27 @@ export const Header = () => {
     )
 };
 
-const Navbar = ()=>{
+export const Navbar = ()=>{
+    // const { setView } = props;
     const [allInitiatives, setAllInitiatives] = useState([]);
     
-    
+    useEffect(() => {
+        getAllInitiatives(setAllInitiatives);
+    }, []);
+    console.log(allInitiatives);
 
-useEffect(() => {
-    getAllInitiatives(setAllInitiatives);
+    return(
+        <nav className={`navbar fixed-bottom ${Style.nav}`}>
+            <div className={`navbar-list ${Style.navList}`}>
+                <button onClick={() => console.log('upload-initiative')} className={`nav-button ${Style.navBtn}`}>Subir Iniciativa</button>
+                <button onClick={() => console.log('initiatives')} className={`nav-button ${Style.navBtn}`}>Iniciativas</button>
+                <button onClick={() => console.log('logout')} className={`nav-button ${Style.navBtn}`}>Salir</button>
+            </div>
+        </nav>
+    )
+};
 
+Navbar.propTypes = {
+    setView: PropTypes.func.isRequired,
+};
 
-    
-}, []);
-console.log(allInitiatives);
-console.log(getAllInitiatives());
-return(
-    <nav className={`navbar fixed-bottom ${Style.nav}`}>
-        <div className={`navbar-list ${Style.navList}`}>
-            <Link className={`nav-link ${Style.navBtn}`} to='/Background'><button className={`nav-button ${Style.navBtn}`}>Subir Iniciativa</button></Link>
-            <Link className="nav-link" to='/Initiatives'><button className={`nav-button ${Style.navBtn}`}>Iniciativas</button></Link>
-            {/* <Link className="nav-link" to='/'><button className={`nav-button ${Style.navBtn}`}>Tunki</button></Link>
-            <Link className="nav-link" to='/Announcement'><button className={`nav-button ${Style.navBtn}`}>Convocatoria workshop</button></Link>
-            <Link className="nav-link" to='/Workshop'><button className={`nav-button ${Style.navBtn}`}>Workshop</button></Link>
-            <Link className="nav-link" to='/Summary'><button className={`nav-button ${Style.navBtn}`}>Resumen workshop</button></Link>
-            <Link className="nav-link" to='/Committee'><button className={`nav-button ${Style.navBtn}`}>Comité ERCP</button></Link> */}
-            <Link className="nav-link" to='/LogOut'><button className={`nav-button ${Style.navBtn}`}>Salir</button></Link>
-        </div>
-    </nav>
-)
-}
-
-export default Navbar;
