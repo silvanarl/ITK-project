@@ -89,9 +89,6 @@ const Login = () => {
         </div>
         <div className={`${Style.banner}`}></div>
       </div>
-      //</section>
-
-      
   );
 };
 

@@ -28,10 +28,10 @@ export const Navbar = (props)=>{
     return(
         <nav className={`navbar fixed-bottom ${Style.nav}`}>
             <div className={`navbar-list ${Style.navList}`}>
-    <button onClick={() => setView('upload-initiative')} className={`nav-button ${Style.navBtn}`}><img src={uploadIcon} alt=""/>Subir Iniciativa</button>
-                <button onClick={() => setView('initiatives')} className={`nav-button ${Style.navBtn}`}><img src={initiativesIcon} alt=""/>Iniciativas</button>
-                <button onClick={() => setView('indicators')} className={`nav-button ${Style.navBtn}`}><img src={statsIcon} alt=""/>Indicadores</button>
-                <button onClick={(e)=>signOut(e)} className={`nav-button ${Style.navBtn}`}><img src={logoutIcon} alt=""/>Salir</button>
+                <button onClick={() => setView('upload-initiative')} className={`nav-button ${Style.navBtn}`}><img src={uploadIcon} className={`navbar-icon ${Style.navIcon}`} alt=""/>Subir Iniciativa</button>
+                <button onClick={() => setView('initiatives')} className={`nav-button ${Style.navBtn}`}><img src={initiativesIcon} className={`navbar-icon ${Style.navIcon}`} alt=""/>Iniciativas</button>
+                <button onClick={() => setView('indicators')} className={`nav-button ${Style.navBtn}`}><img src={statsIcon} className={`navbar-icon ${Style.navIcon}`} alt=""/>Indicadores</button>
+                <button onClick={(e)=>signOut(e)} className={`nav-button ${Style.navBtn}`}><img src={logoutIcon} className={`navbar-icon ${Style.navIcon}`} alt=""/>Salir</button>
             </div>
         </nav>
     )

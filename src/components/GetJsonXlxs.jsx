@@ -64,6 +64,8 @@ class GetDataFromExcelJusTInput extends Component {
                     accept="xls, xlsx."
                 />
             </span>
+            <h2 className="title">Subir iniciativa</h2>
+            <p className="description"> Crea una iniciativa</p>
             <label htmlFor="file">
                 <span>
                     Seleccionar archivo
