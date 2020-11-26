@@ -22,7 +22,9 @@ export const getAllInitiatives = (callback) =>
             name: doc.data().name,
             description: doc.data().description,
             request_area: doc.data().request_area,
-            leader: doc.data().leader
+            leader: doc.data().leader,
+            tags: doc.data().tags
+            
           }
         arrInitiatives.push(objInitiative);
       });

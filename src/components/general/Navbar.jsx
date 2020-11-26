@@ -1,9 +1,7 @@
-
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Style from './navbar.module.css';
-// import {Link} from 'react-router-dom';
-import { getAllInitiatives } from '../../API/crud';
+
 
 export const Header = () => {
     return (
@@ -18,21 +16,15 @@ export const Header = () => {
     )
 };
 
-export const Navbar = ()=>{
-    // const { setView } = props;
-    const [allInitiatives, setAllInitiatives] = useState([]);
-    
-    useEffect(() => {
-        getAllInitiatives(setAllInitiatives);
-    }, []);
-    console.log(allInitiatives);
+export const Navbar = (props)=>{
+    const { setView } = props;
 
     return(
         <nav className={`navbar fixed-bottom ${Style.nav}`}>
             <div className={`navbar-list ${Style.navList}`}>
-                <button onClick={() => console.log('upload-initiative')} className={`nav-button ${Style.navBtn}`}>Subir Iniciativa</button>
-                <button onClick={() => console.log('initiatives')} className={`nav-button ${Style.navBtn}`}>Iniciativas</button>
-                <button onClick={() => console.log('logout')} className={`nav-button ${Style.navBtn}`}>Salir</button>
+                <button onClick={() => setView('upload-initiative')} className={`nav-button ${Style.navBtn}`}>Subir Iniciativa</button>
+                <button onClick={() => setView('initiatives')} className={`nav-button ${Style.navBtn}`}>Iniciativas</button>
+                <button onClick={() => setView('indicators')} className={`nav-button ${Style.navBtn}`}>Indicadores</button>
             </div>
         </nav>
     )
