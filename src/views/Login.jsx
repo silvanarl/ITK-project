@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import Style from './login.module.css'
 import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-<<<<<<< HEAD
-=======
-import interkunaq from '../assets/interkunaq.jpeg';
->>>>>>> 16ddfab5a10f9a8e80bac4367cca8112f649924c
+//import interkunaq from '../assets/interkunaq.jpeg';
 import { signIn } from '../API/auth';
 import '../components/general/loginStyled.css';
 import firebase from '../firebase.config.js'; 
