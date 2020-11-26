@@ -8,7 +8,7 @@ const FormInitiative = (props) => {
     console.log(sheets);
     const initialState = {
         application_number: '',
-        status: '',
+        status: 'Convocatoria a workshop',
         leader: sheets[0].data[4].__EMPTY_9,
         name: sheets[0].data[3].__EMPTY_11,
         release_date: '',

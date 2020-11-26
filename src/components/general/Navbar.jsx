@@ -6,6 +6,7 @@ import uploadIcon from '../../assets/SVG/IconoSubirIniciativa.svg';
 import initiativesIcon from '../../assets/SVG/IconoIniciativas.svg';
 import statsIcon from '../../assets/SVG/IconoEstadistica.svg';
 import logoutIcon from '../../assets/SVG/IconoSalir.svg';
+import {signOut} from '../../API/auth';
 
 
 export const Header = () => {
@@ -30,7 +31,7 @@ export const Navbar = (props)=>{
     <button onClick={() => setView('upload-initiative')} className={`nav-button ${Style.navBtn}`}><img src={uploadIcon} alt=""/>Subir Iniciativa</button>
                 <button onClick={() => setView('initiatives')} className={`nav-button ${Style.navBtn}`}><img src={initiativesIcon} alt=""/>Iniciativas</button>
                 <button onClick={() => setView('indicators')} className={`nav-button ${Style.navBtn}`}><img src={statsIcon} alt=""/>Indicadores</button>
-                <button onClick={()=>(console.log('logout'))} className={`nav-button ${Style.navBtn}`}><img src={logoutIcon} alt=""/>Salir</button>
+                <button onClick={(e)=>signOut(e)} className={`nav-button ${Style.navBtn}`}><img src={logoutIcon} alt=""/>Salir</button>
             </div>
         </nav>
     )

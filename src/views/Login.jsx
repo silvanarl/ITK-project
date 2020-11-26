@@ -42,7 +42,7 @@ const Login = () => {
           .then(() => {
             localStorage.clear();
             localStorage.setItem('user', email);
-            history.push('/menu');
+            history.push('/home');
           })
           .catch((err) => console.log(err));
         return null;

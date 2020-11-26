@@ -39,6 +39,25 @@ export const getAllInitiatives = (callback) =>
 
 export const getADocument = (docID, collectionName) => {
       const docRef = db.collection(collectionName).doc(docID);
+      console.log('docref', docRef.get());
       return docRef.get();
+      
 };
-    
+  
+export const updateStatusDb = (id, newStatus) => {
+  db.collection('initiatives').doc(id).update({
+    status: newStatus,
+  });
+};
+
+export const createComment = (obj, collectionName) =>
+    db
+    .collection(collectionName)
+    .doc()
+    .set(obj)
+    .then(() => {
+      console.log('se envio el comentario');
+    })
+    .catch((error) => {
+      console.log('Ocurrió un error al enviar tu comentario', error);
+  });
