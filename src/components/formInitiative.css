@@ -3,24 +3,72 @@
     flex-direction: column;
     font-family: "Geometria-Regular";
     font-weight: 500;
+    width: 720px;
 }
-.form-input{
-    width: 23rem;
-    height: 1.5rem;
-}
-.form-container-input{
-    padding-bottom: 0.5rem;
-    border-color: #AEA9A9;
-}
-.form-submit-button{
-    background-color: #05BE50;
-    height: 2.5rem;
-    width: 10rem;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
+
 .form-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #0039A6;
     margin-top:.8rem;
     margin-bottom: .7rem;
+    /*revisar si font-size aplica*/
     font-size: larger;
+}
+
+.item{
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.double-col{
+    display: flex;
+    flex-direction: row;
+    width: 718px;
+    justify-content: space-between;
+}
+
+select{
+    width: 202px;
+    height: 48px;
+    padding-left: 28px;
+    border: 1px solid rgba(15, 25, 30, 0.2);
+    border-radius: 4px;
+    padding-right: 30px;
+}
+
+.short{
+    width: 590px;
+}
+
+::placeholder{
+    color: #AEA9A9;
+}
+
+.form-input{
+    min-height: 48px;
+    width: 330px;
+    height: 1.5rem;
+    padding: 8px 14px;
+    border: 1px solid rgba(15, 25, 30, 0.2);
+    border-radius: 4px;
+}
+
+.large{
+    width: 720px;
+}
+
+.btn{
+    background: #37CB73;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 32px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-left: 71.5%;
+    margin-top: 20px;
 }
