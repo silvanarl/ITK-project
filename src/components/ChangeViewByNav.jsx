@@ -1,26 +1,31 @@
-import React, { useState } from 'react';
-import Home from '../views/Home';
-import { Navbar } from './general/Navbar';
-import FormInitiative from './FormInitiative';
+import React from 'react';
+import PropTypes from 'prop-types';
+import InitiativesCard from './InitiativesCard';
+import GetJsonXlxs from './GetJsonXlxs';
+import Indicators from './Indicators';
 
-const ChangeView = () => {
-    const [view, setView] = useState('');
+const ChangeView = ({view, allInitiatives}) => {
   
     return (
       <div className="container-status">
         {/* <div className="details-info-title">Nombre de la iniciativa</div> */}
-        <Navbar setView={setView} />
         {view === 'upload-initiative' ? (
-          <Home />
+          <GetJsonXlxs />
         ) : view === 'initiatives' ? (
-          <FormInitiative />
-        ) : view === 'logout' ? (
-          <FormInitiative />
+          <InitiativesCard allInitiatives={allInitiatives} />
+        ) : view === 'indicators' ? (
+          <Indicators />
         ) : (
-          <Home />
+          <GetJsonXlxs />
         )}
       </div>
     );
 };
+
+ChangeView.propTypes = {
+    view: PropTypes.string.isRequired,
+    allInitiatives: PropTypes.arrayOf(PropTypes.object).isRequired
+};
+
 
 export default ChangeView;

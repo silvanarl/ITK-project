@@ -21,6 +21,7 @@ const Iniative = (props) => {
         ppt_url:'',
         pdf_url:'',
         lawyers: [],
+        tags:[],
         comments: [],
         notes: [],
     };
@@ -34,7 +35,19 @@ const Iniative = (props) => {
         console.log(e.target.value);
         setInitiative({ ...initiative, [name]: value });
     };   
+    const comma = ',';
     
+    const separateString = (string, separator) => string.split(separator);
+    console.log(separateString('juana,maria,pedro', comma));
+    const updateArray = (e) => {
+        const { name } = e.target;
+        const valueString = e.target.value;
+        console.log(valueString);
+        const newValue = separateString(valueString, comma);
+        console.log(newValue)
+        setInitiative({ ...initiative, [name]: newValue });
+    };
+
     const sendToDb= (obj) => {
         sendInitiative(obj);
         setInitiative({...initialState})
@@ -58,6 +71,14 @@ const Iniative = (props) => {
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Líder / Responsable: </label>
                     <input className="form-input" type="text" name="leader" value={initiative.leader} />
+                </div>
+                <div className="flex-column form-container-input">
+                    <label htmlFor="">Asignar abogados a esta iniciativa: </label>
+                    <input className="form-input" placeholder="Ejemplo: Juana López, Mario Moncada" type="text" name="lawyers" onChange={(e)=> updateArray(e)}/>
+                </div>
+                <div className="flex-column form-container-input">
+                    <label htmlFor="">Agregar tags a esta iniciativa: </label>
+                    <input className="form-input" placeholder="Ejemplo: pagos móviles, tarjetas de crédito" type="text" name="tags" onChange={(e)=> updateArray(e)}/>
                 </div>
                 <div className="flex-column form-container-input">
                     <label htmlFor="">Agregar enlace a ppt de la iniciativa: </label>
