@@ -25,10 +25,20 @@ export const getAllInitiatives = (callback) =>
             leader: doc.data().leader,
             tags: doc.data().tags,
             application_number: doc.data().application_number,
-            type_of_change: doc.data().type_of_change
+            type_of_change: doc.data().type_of_change,
+            release_date:doc.data().release_date,
+            lawyers:doc.data().lawyers,
+            target: doc.data().target,
+            target_market:doc.data().target_market,
+            associated_operational_process: doc.data().associated_operational_process
           }
         arrInitiatives.push(objInitiative);
       });
       callback(arrInitiatives);
     });
+
+export const getADocument = (docID, collectionName) => {
+      const docRef = db.collection(collectionName).doc(docID);
+      return docRef.get();
+};
     
