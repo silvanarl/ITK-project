@@ -21,9 +21,9 @@
   },
   "rnpm": {
     "assets": [
-	    "./assets/fonts/"
+      "./assets/fonts/"
     ]
-  },  
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
