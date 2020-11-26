@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.view{
+    min-height: 100vh;
+}
+
+.header{
+    height: 38vh;
+    padding-top: 8vh;
+    padding-left: 13.05vw;
+}
+
+.logo{
+    max-width: 333px;
+}
+
+.formLogin{
+    padding-left: 13.8vw;
+}
+
+.indicatorBox{
+    margin-bottom: 3.7vh;
+}
+
+.logP{
+    font-size: 36px;
+    color: #0039A6;
+}
+
+.containerForm{
+    min-height: 251px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
+}
+
+.label{
+    margin-bottom: 10px;
+    color: #0039A6;
+}
+
+.input{
+    margin-bottom: 19px;
+    background: rgba(15, 25, 30, 0.05);
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    height: 40px;
+    width: 303px;
+    padding-left: 13px;
+    color: #C4C4C4;
+    font-family: 'Montserrat';
+    font-weight: 200;
+}
+
+.forget{
+    text-decoration: none;
+    color: #0039A6;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    background: #37CB73;
+    border: none;
+    border-radius: 4px;
+    width: 129px;
+    height: 48px;
+    color: #0039A6;
+    margin-left: 42vw;
+    text-transform: uppercase;
+}
+
+.banner{
+    height: 196px;
+    background: url(https://firebasestorage.googleapis.com/v0/b/interbank-project.appspot.com/o/assets%2Fimg-banner-mobile.png?alt=media&token=dd6fc694-ce02-488f-9b1f-04db399dd877);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 328px;
+}
+
+@media screen and (min-width:1024px){
+    .view{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .header{
+        padding-top: 18vh;
+        padding-left: 10vw;
+    }
+
+    .logo{
+        max-width: 436px;
+    }
+
+    .formLogin{
+        padding-left: 10vw;
+        margin-top: 10vh;
+    }
+
+    .forget{
+        margin-bottom: 35px;
+    }
+
+    .btn{
+        margin-left: 100px;
+        text-transform: uppercase;
+    }
+
+    .banner{
+        height: 100vh;
+        width: 758px;
+        background: url(https://firebasestorage.googleapis.com/v0/b/interbank-project.appspot.com/o/assets%2Fimg-banner.png?alt=media&token=82613171-1b74-47f6-a1d0-7b5b929bd258);
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+}

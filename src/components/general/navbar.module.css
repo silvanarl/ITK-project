@@ -1,3 +1,7 @@
+*{
+    
+}
+
 .nav{
     left: 0;
     width: 384px;
@@ -30,9 +34,24 @@
 .navList{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
+
+.navBtnPri{
+    width: 100%;
+    min-height: 56px;
+    border: none;
+    text-align: left;
+    padding-left: 32px;
+    background: #05BE50;
+    color: #FFFFFF;
+}
+
 .navBtn{
     width: 100%;
     min-height: 56px;
+    border: none;
+    text-align: left;
+    padding-left: 32px;
+    background: #05BE50;
+    color: #FFFFFF;
 }

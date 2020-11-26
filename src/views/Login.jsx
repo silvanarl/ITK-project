@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Style from './login.module.css'
+import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import logoInterkunaq from '../assets/interkunaq.jpeg';
 import { signIn } from '../API/auth';
 
 const Login = () => {
@@ -33,43 +34,46 @@ const Login = () => {
         return null;
   };
   return (
-      <div>
-        <header className="App-header">
-            <img className="logo-image" src={logoInterkunaq} alt="Logo" />  
+      <div className={`${Style.view}`}>
+        <div className={`app-header ${Style.col}`}>
+        <header className={`app-header ${Style.header}`}>
+            <img className={`logo-image ${Style.logo}`} src= 'https://firebasestorage.googleapis.com/v0/b/interbank-project.appspot.com/o/assets%2Flogo-interkunaq.png?alt=media&token=891f5866-590e-470d-a225-784811fcb62c' alt="Logo" />  
         </header>
-        <main className="login-main">
-        <form action="" className="form-login" onSubmit={loginSubmit}>
-            <div className="content-logo">
-            <p className="alg-center">Inicia Sesión</p>
+        <main className={`login-main ${Style.logMain}`}>
+        <form action="" className={`form-login ${Style.formLogin}`} onSubmit={loginSubmit}>
+            <div className={`indicator ${Style.indicatorBox}`}>
+            <p className={`${Style.logP}`}>Inicia Sesión</p>
             </div>
-            <div className="container-form">
-            <label htmlFor="email">
-                <p className="text-label">Correo</p>
+            <div className={`${Style.containerForm}`}>
+            <label htmlFor="email" >
+                <p className={`${Style.label}`}>Correo electrónico</p>
                 <input
-                className="input-form"
+                className={`${Style.input}`}
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 name="email"
-                placeholder="ejemplo@ejemplo.com"
+                placeholder="nombre@email.com"
                 />
             </label>
             <label htmlFor="password">
-                <p className="text-label">Password</p>
+                <p className={`${Style.label}`}>Contraseña</p>
                 <input
-                className="input-form"
+                className={`${Style.input}`}
                 onChange={handleChange}
                 type="password"
                 name="passsword"
-                placeholder="password"
+                placeholder="contraseña123"
                 />
             </label>
-            <button type="submit" className="login-button" disabled={disabled}>
+            <Link to="/404" className={`${Style.forget}`}>¿Olvidaste tu contraseña?</Link>
+            <button type="submit" className={`${Style.btn}`} disabled={disabled}>
                 Ingresar
             </button>
-            {/* <Link to="">Olvidé mi contraseña</Link> */}
             </div>
         </form>
         </main>
+        </div>
+        <div className={`${Style.banner}`}></div>
       </div>
   );
 };

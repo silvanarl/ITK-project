@@ -14,9 +14,9 @@ const Navbar = ()=>{
                 </picture>
             </div>
             <div className={`navbar-list ${Style.navList}`}>
-                <Link to='/Background'><button className={`nav-button ${Style.navBtn}`}>Antecedentes</button></Link>
-                <Link to='/Initiatives'><button className={`nav-button ${Style.navBtn}`}>Iniciativas</button></Link>
-                <Link to='/'><button className={`nav-button ${Style.navBtn}`}>Tunki</button></Link>
+                <Link to='/Background'><button className={`nav-button ${Style.navBtnPri}`}>Antecedentes</button></Link>
+                <Link to='/Initiatives'><button className={`nav-button ${Style.navBtnPri}`}>Iniciativas</button></Link>
+                <Link to='/'><button className={`nav-button ${Style.navBtnPri}`}>Tunki</button></Link>
                 <Link to='/Announcement'><button className={`nav-button ${Style.navBtn}`}>Convocatoria workshop</button></Link>
                 <Link to='/Workshop'><button className={`nav-button ${Style.navBtn}`}>Workshop</button></Link>
                 <Link to='/Summary'><button className={`nav-button ${Style.navBtn}`}>Resumen workshop</button></Link>
