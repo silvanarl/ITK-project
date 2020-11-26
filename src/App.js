@@ -4,6 +4,7 @@ import { auth } from './firebase.config';
 import PropTypes from 'prop-types';
 import Login from './views/Login';
 import Home from './views/Home';
+import Search from './components/Search';
 import InitiativeStatus from './views/InitiativeStatus';
 import Spinner from './components/general/Spinner';
 import Initiatives from './components/Initiatives';
@@ -58,6 +59,11 @@ const App = () => {
   return (
     <Router>
       <Switch>
+        <Route exact path="/Search">
+          <Search />
+        </Route>
+
+        <Route exact path="/initiative:id">
         <NonLoggedInRoute isUserLoggedIn={isUserLoggedIn} exact path="/">
           <Login />
         </NonLoggedInRoute>

@@ -40,3 +40,4 @@ export const Navbar = (props)=>{
 Navbar.propTypes = {
     setView: PropTypes.func.isRequired,
 };
+

@@ -10,13 +10,6 @@ import 'firebase/storage';
 
 const storage = firebase.storage()
 console.log (storage)
-let pathReference = storage.ref('assets');
-
-let spaceRef =  pathReference.child('img-banner.png').getDownloadURL().then(url => {
-let url2=url 
-
-return url2})
-console.log(spaceRef)
 
 
 const Login = () => {
@@ -45,7 +38,7 @@ const Login = () => {
             history.push('/home');
           })
           .catch((err) => console.log(err));
-        return null;
+        //return null;
   };
   return (
       <div className={`${Style.view}`}>
