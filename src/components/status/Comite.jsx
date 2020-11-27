@@ -37,9 +37,10 @@ const Comite = ({init, initID}) => {
         getComments(setComiteCommentBox, 'comiteComments');
       }, []);
     return (
-        <div>
-            <label className='form-title'htmlFor="">Escribe un comentario</label>
+        <div className='space-top'>
+            <label className='form-title space-top'htmlFor="">Escribe un comentario</label>
             <textarea 
+            className='textarea'
             name="content" 
             value={comiteComment.content}
             id="" 
@@ -49,7 +50,7 @@ const Comite = ({init, initID}) => {
             onChange={(e)=>catchComment(e)}
             >
             </textarea>
-            <button onClick={()=>sendComment(comiteComment)}>Enviar</button>
+            <button className='send-btn' onClick={()=>sendComment(comiteComment)}>Enviar</button>
             <div>
                 {comiteCommentBox.map((element) => {
                     switch (element.idInitiative) {
