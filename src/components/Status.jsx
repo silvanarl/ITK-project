@@ -48,7 +48,7 @@ export default function Status() {
                 <option value="Convocatoria a workshop">Convocatoria a Workshop</option>
                 <option value="Workshop">Workshop</option>
                 <option value="Resumen workshop">Resumen workshop</option>
-                <option value="Comite ERCP">Comité ERCP</option>
+                <option value="Comite ERCP">Comité ERPC</option>
             </select>
         <span>Esta iniciativa actualmente se encuentra en: {init.status}</span>
       </div>
