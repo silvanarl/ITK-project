@@ -15,7 +15,7 @@ const ChangeView = ({view, allInitiatives}) => {
         ) : view === 'initiatives' ? (
           <Search allInitiatives={allInitiatives} /> 
         ) : view === 'indicators' ? (
-          <Indicators />
+          <Indicators allInitiatives={allInitiatives}/>
         ) : (
           <GetJsonXlxs />
         )}
