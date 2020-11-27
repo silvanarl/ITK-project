@@ -39,12 +39,17 @@ a:link {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-self: center;
+    margin-bottom: .5rem;
 }
 
 .tag-card{
     height: 37px;
     color: #0039A6;
     margin-right: 15px;
+    border: 1px solid #0039A6;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .changeBox{
@@ -53,9 +58,11 @@ a:link {
 
 .change{
     height: 37px;
-    background-color: rgb(54, 190, 253);
-    padding: 6px 15px;
-    border-radius: 20px;
+    border-radius: 4px;
+    background-color: #05BE50;
+    padding: 5px;
+    margin-top: 0.2rem;
+    color: #fff;
 }
 
 .red{

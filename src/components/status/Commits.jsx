@@ -26,7 +26,7 @@ const Commits = (props) => {
           };
     return (
         <div className='space-top'>
-            <label className='form-title space-top'htmlFor="">Escribe un comentario</label>
+            <label className='form-title space-top'htmlFor="">Escribe tu compromiso</label>
             <textarea 
             className='textarea'
             name="content" 

@@ -3,6 +3,7 @@ import React from 'react'
 import {useState } from 'react'
 import InitiativesCard from './InitiativesCard';
 import './general/search.css';
+import iconSearch from '../assets/SVG/icon-search.svg';
 
 
 const Search = ({allInitiatives}) => {
@@ -35,7 +36,7 @@ const Search = ({allInitiatives}) => {
                     />
                     <div className="container-button-search">
                       <button className = "search-btn" 
-                      onClick= {searchInitiative} ><img src="https://firebasestorage.googleapis.com/v0/b/interbank-project.appspot.com/o/assets%2Ficons%2Fsearch%20icon.png?alt=media&token=d4d85db7-212e-4ee5-8533-2ae4916a8876" alt="Search icon"/></button>
+                      onClick= {searchInitiative} ><img className="iconSearch" src={iconSearch} alt="Search icon"/></button>
                       <button className = "all-search-button" 
                       onClick= {bolo}> Todas las Iniciativas </button>
                     </div>
