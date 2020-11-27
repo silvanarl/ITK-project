@@ -4,10 +4,11 @@ import { auth } from './firebase.config';
 import PropTypes from 'prop-types';
 import Login from './views/Login';
 import Home from './views/Home';
+import Search from './components/Search';
 import InitiativeStatus from './views/InitiativeStatus';
 import Spinner from './components/general/Spinner';
-import Initiatives from './components/Initiatives';
-import Status from './components/Status';
+// import Initiatives from './components/Initiatives';
+// import Status from './components/Status';
 
 function LoggedInRoute({ children, isUserLoggedIn, ...rest }) {
   return (
@@ -69,16 +70,16 @@ const App = () => {
           exact
           path="/home/initiatives"
         >
-          <Initiatives />
+          <Search />
         </LoggedInRoute>
-        <LoggedInRoute
+        {/* <LoggedInRoute
           isUserLoggedIn={isUserLoggedIn}
           exact
           path="/home/initiatives:id"
         >
           <Status />
-        </LoggedInRoute>
-        <Route exact path="/initiative:id">
+        </LoggedInRoute> */}
+        <Route exact path="/home/initiative:id">
           <InitiativeStatus />
         </Route>
       </Switch>

@@ -1,20 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
 import { updateStatusDb } from '../../API/crud';
 import './convocatoria.css'
+=======
+>>>>>>> d7e63008b334a621c4aef0f1036c9e7afbfe462b
 
 const Convocatoria = (props) => {
-    const {init, initID} = props;
-    console.log(initID);
-    const [initStatus, setInitStatus] = useState(init);
-    const updateStatus = (e) => {
-        const { name, value } = e.target;
-        const newStatus = e.target.value;
-        updateStatusDb(initID, newStatus);
-        setInitStatus({ ...init, [name]: value });
-    }
+    const {init} = props;
+
     return (
         <div>
+<<<<<<< HEAD
             <h3 className="form-title">Información de la iniciativa</h3>
             <p className="state-info-p">Esta iniciativa actualmente se encuentra en {initStatus.status}</p>
             <div className="item">
@@ -42,6 +39,20 @@ const Convocatoria = (props) => {
             <p className="item-show">Proceso operativo asociado<span className="info-data">{init.associated_operational_process}</span></p>
             <p className="item-show">Tags<span className="info-data">{init.tags}</span></p>
             {console.log(initStatus)}
+=======
+            <span>Información de la iniciativa:</span>
+            <span>Nº de Solicitud: {init.application_number}</span>
+            <span>Tipo de Cambio: {init.type_of_change}</span>
+            <span>Nombre de la iniciativa: {init.name}</span>
+            <span>Fecha aproximada de lanzamiento: {init.release_date}</span>
+            <span>Líder: {init.leader}</span>
+            <span>Abogados asignados: {init.lawyers}</span>
+            <p>Objetivo:{init.target}</p>
+            <p>Descripción:{init.description}</p>
+            <p>Mercado objetivo:{init.target_market}</p>
+            <p>Proceso operativo asociado:{init.associated_operational_process}</p>
+            <span>Tags: {init.tags}</span>
+>>>>>>> d7e63008b334a621c4aef0f1036c9e7afbfe462b
         </div>
     )
 };
