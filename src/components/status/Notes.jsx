@@ -21,7 +21,7 @@ const Notes = (props) => {
       };
 
     return (
-        <div className='notes-container'>
+        <div className='space-top'>
             <label className='form-title space-top' htmlFor="">Escribe un comentario</label>
             <textarea 
             className='textarea'
