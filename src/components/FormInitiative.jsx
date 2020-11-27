@@ -1,5 +1,6 @@
 import React,  { useState} from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import './formInitiative.css';
 import { sendInitiative } from '../API/crud';
 import useModal from '../hooks/useModal';
@@ -7,6 +8,7 @@ import Modal from './Modal';
 
 const FormInitiative = (props) => {
     const { sheets } = props;
+    const history = useHistory();
     console.log(sheets);
     const initialState = {
         application_number: '',
@@ -47,10 +49,13 @@ const FormInitiative = (props) => {
         setInitiative({ ...initiative, [name]: newValue });
     };
 
+    const returnHome = () => history.push('/home/initiatives');
+
     const sendToDb= () => {
         sendInitiative(initiative);
         setInitiative({...initialState});
-        return toggleModal();
+
+        returnHome();
     };
     return (
         <div className="container-initiative">
@@ -103,7 +108,7 @@ const FormInitiative = (props) => {
                         <input className="form-input" placeholder="Ejemplo: https://" type="text" name="pdf_url" onChange={(e)=> updateValue(e)}/>
                     </div>
                 </div>
-                <button className="btn" onClick={sendToDb} type="button">Subir Iniciativa</button>
+                <button className="btn" onClick={(e)=>sendToDb(e)} type="button">Subir Iniciativa</button>
             </form>
           <Modal hide={toggleModal} isShowing={isShowing} />
         </div>
