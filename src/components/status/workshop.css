@@ -5,42 +5,19 @@
 }
 
 .workshop-button{
-    width: 8rem;
-    height: 2.5rem;
-    background-color: #0039A6;
-    color: #fff;
-    margin: 1rem;
-    border-radius: 4px;
-}
-.icon-img{
-    width: 1.5rem;
-    height: 1.5rem;
     width: 200px;
     height: 168px;
     background-color: #0039A6;
     color: #fff;
-    display: block;
-    margin: 0 auto;
-    background: linear-gradient(180deg, #0039A6 0%, rgba(255, 255, 255, 0) 100%), rgba(5, 190, 80, 0.8);
+    margin: 1rem;
     border-radius: 4px;
-}
-
-.icon-button{
     display: block;
-    margin: 0 auto;
-    margin-bottom: 15px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8%;
 }
 
 .workshop-button:hover{
-    background-color: #003aa6;
-    width: 8rem;
-    height: 2.5rem;
-    background-color: #0039A6;
-    color: #fff;
     margin: 1rem;
-    border-radius: 4px;
-}
-.icon-img{
-    width: 1.5rem;
-    height: 1.5rem;
+    background: linear-gradient(180deg, #0039A6 0%, rgba(255, 255, 255, 0) 100%), rgba(5, 190, 80, 0.8);
 }

@@ -5,6 +5,7 @@ import {
     createComment,
     getComments
     } from '../../API/crud';
+import './notes.css'
 
 
 const Comite = ({init, initID}) => {
@@ -37,7 +38,7 @@ const Comite = ({init, initID}) => {
       }, []);
     return (
         <div>
-            <label htmlFor="">Escribe un comentario</label>
+            <label className='form-title'htmlFor="">Escribe un comentario</label>
             <textarea 
             name="content" 
             value={comiteComment.content}
@@ -54,9 +55,9 @@ const Comite = ({init, initID}) => {
                     switch (element.idInitiative) {
                         case initID:
                             return (
-                                <div key={element.id}>
-                                    <span>{element.user}</span>
-                                    <span>{element.content}</span>
+                                <div className='mes-box'key={element.id}>
+                                    <span className='mes-user'>{element.user}</span>
+                                    <span className='mes-content'>{element.content}</span>
                                 </div>
                         )
                         default:

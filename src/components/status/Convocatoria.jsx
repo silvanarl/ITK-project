@@ -25,7 +25,6 @@ const Convocatoria = (props) => {
             <p className="item-show">Mercado objetivo<span className="info-data">{init.target_market}</span></p>
             <p className="item-show">Proceso operativo asociado<span className="info-data">{init.associated_operational_process}</span></p>
             <p className="item-show">Tags<span className="info-data">{init.tags}</span></p>
-            {console.log(initStatus)}
         </div>
     )
 };

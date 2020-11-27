@@ -24,6 +24,8 @@ const Search = ({allInitiatives}) => {
     } 
         return (
             <div className="bg-input-value">
+                <h2 className="title">Iniciativas</h2>
+                <p className="description">Buscar iniciaticas por palabra clave</p>
                 <div className="container-input-value">
                     {/* <img className="icon-value" src={loupe} alt=""/> */}
                     <input 
@@ -33,7 +35,7 @@ const Search = ({allInitiatives}) => {
                     />
                     <div className="container-button-search">
                       <button className = "search-btn" 
-                      onClick= {searchInitiative}> Buscar </button>
+                      onClick= {searchInitiative} ><img src="https://firebasestorage.googleapis.com/v0/b/interbank-project.appspot.com/o/assets%2Ficons%2Fsearch%20icon.png?alt=media&token=d4d85db7-212e-4ee5-8533-2ae4916a8876" alt="Search icon"/></button>
                       <button className = "all-search-button" 
                       onClick= {bolo}> Todas las Iniciativas </button>
                     </div>

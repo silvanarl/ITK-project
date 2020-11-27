@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {createComment } from '../../API/crud';
-
+import './notes.css'
 
 const Comments = (props) => {
     const {comments, setComments, commentsBox, initialStateComment, initID } = props;
@@ -20,7 +20,7 @@ const Comments = (props) => {
       };
     return (
         <div>
-            <label htmlFor="">Escribe un comentario</label>
+            <label className='form-title' htmlFor="">Escribe un comentario</label>
                 <textarea 
                 name="content" 
                 value={comments.content}
@@ -37,10 +37,10 @@ const Comments = (props) => {
                     switch (comment.idInitiative) {
                         case initID:
                             return (
-                                <div key={comment.id}>
-                                    <span>{comment.user}</span>
-                                    <span>{comment.content}</span>
-                                </div>
+                                <div className='mes-box'key={comment.id}>
+                                        <span className='mes-user'>{comment.user}</span>
+                                        <span className='mes-content'>{comment.content}</span>
+                                    </div>
                         )
                         default:
                     }

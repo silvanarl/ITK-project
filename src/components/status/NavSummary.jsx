@@ -6,13 +6,13 @@ import commitIcon from '../../assets/SVG/IconoCompromiso.svg';
 const NavSummary = (props) => {
     const { setView } = props;
     return (
-        <div>
+        <div className="cho-btn-status">
             <button 
                 onClick={() => setView('summary-comments')} 
                 className="workshop-button" 
                 type="button"
             >
-                <img src={commentIcon} className="icon-img" alt=""/>
+                <img src={commentIcon} className="icon-works" alt=""/>
                 Comentarios
             </button>
             <button 
@@ -20,7 +20,7 @@ const NavSummary = (props) => {
                 className="workshop-button" 
                 type="button"
             >
-                <img src={commitIcon} className="icon-img" alt=""/>
+                <img src={commitIcon} className="icon-works" alt=""/>
                 Compromisos
             </button>
         </div>
