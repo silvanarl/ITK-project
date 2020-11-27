@@ -40,6 +40,14 @@ select{
     padding-right: 30px;
 }
 
+option{
+    width: 202px;
+    height: 48px;
+    padding-left: 28px;
+    border: 1px solid rgba(15, 25, 30, 0.2);
+    padding-right: 30px;
+}
+
 .short{
     width: 590px;
 }
