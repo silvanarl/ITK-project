@@ -4,7 +4,7 @@ import './status.css';
 import { useParams } from 'react-router-dom';
 import StatusNav from './StatusNav';
 import Convocatoria from './status/Convocatoria';
-import Workshop from './status/Workshop';
+import {Workshop} from './status/Workshop';
 import Comite from './status/Comite';
 import Summary from './status/Summary';
 import { getADocument } from '../API/crud';
@@ -29,22 +29,21 @@ export default function Status() {
       console.log('Error getting document:', error);
     });
   }, [id]);
-  console.log(init);
 
   return (
-    <div className="container-status">
+    <div className="container-status" id="status">
       <div className="details-info-title">{init.name}</div>
       <StatusNav setView={setView} />
       {view === 'convocatoria' ? (
-        <Convocatoria init={init} />
+        <Convocatoria obj={init} initID={initID} />
       ) : view === 'workshop' ? (
-        <Workshop />
+        <Workshop init={init} initID={initID} />
       ) : view === 'summary' ? (
-        <Summary />
+        <Summary init={init} initID={initID} />
       ) : view === 'comite' ? (
-        <Comite />
+        <Comite init={init} initID={initID} />
       ) : (
-        <Convocatoria init={init} />
+        <Convocatoria init={init} initID={initID} />
       )}
     </div>
   );

@@ -1,9 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
 .nav{
     left: 0;
     min-width: 12rem;
     height: 90vh;
     background-color: #05be4f9c;
-    border-bottom-right-radius: 60px;
+    border-bottom-right-radius: 88px;
 }
 button{
     border:none;
@@ -16,9 +23,10 @@ button{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    height: 10vh;
     background-color: #fff;
-    box-shadow: 2px 2px 5px #999;
-    margin-bottom: 3px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-top: 2vh;
 }
 
 .burgerBox{
@@ -43,18 +51,56 @@ button{
 .navList{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 300px;
 }
-.navBtn{
+
+.navBtnPri{
     width: 100%;
     min-height: 56px;
+    border: none;
+    text-align: left;
+    padding-left: 32px;
+    background: #05BE50;
+    color: #FFFFFF;
+}
+
+.navBtn{
+    width: 100%;
+    min-height: 76px;
     font-family: "Geometria-Regular";
     color: #fff;
-    border-bottom: 1px solid #fff;
+    text-align: left;
+    font-size: 18px;
 }
+
+.navIcon{
+    margin-left: 40px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
 .navBtn:hover{
+    border-bottom: 1px solid #fff;
     background-color: #05BE50;
 }
 .nav-link{
     width: 100%;
+}
+
+@media screen and (min-width:800px){
+    .logo{
+        height: 6rem;
+    }
+}
+
+@media screen and (min-width:1024px){
+    
+    .navHead{
+        min-height: 112px;
+        padding-top: 15px;
+    }
+    .logo{
+        height: 6rem;
+        margin-left: 20px;
+    }
 }

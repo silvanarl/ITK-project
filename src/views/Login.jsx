@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import Style from './login.module.css'
+import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import interkunaq from '../assets/interkunaq.jpeg';
+//import interkunaq from '../assets/interkunaq.jpeg';
 import { signIn } from '../API/auth';
 import '../components/general/loginStyled.css';
 import firebase from '../firebase.config.js'; 
@@ -33,56 +35,53 @@ const Login = () => {
           .then(() => {
             localStorage.clear();
             localStorage.setItem('user', email);
-            history.push('/menu');
+            history.push('/home');
           })
           .catch((err) => console.log(err));
         //return null;
   };
   return (
-    <section className="background">
-
-      <div>
-        <header className="App-header">
-            <img className="logo-image" src={interkunaq} alt="Logo" />  
+      <div className={`${Style.view}`}>
+        <div className={`app-header ${Style.col}`}>
+        <header className={`app-header ${Style.header}`}>
+            <img className={`logo-image ${Style.logo}`} src= 'https://firebasestorage.googleapis.com/v0/b/interbank-project.appspot.com/o/assets%2Flogo-interkunaq.png?alt=media&token=891f5866-590e-470d-a225-784811fcb62c' alt="Logo" />  
         </header>
-        <main className="login-main">
-          <form action="" className="form-login" onSubmit={loginSubmit}>
-            <div className="content-logo">
-              <p className="alg-center">Inicia Sesión</p>
+        <main className={`login-main ${Style.logMain}`}>
+        <form action="" className={`form-login ${Style.formLogin}`} onSubmit={loginSubmit}>
+            <div className={`indicator ${Style.indicatorBox}`}>
+            <p className={`${Style.logP}`}>Inicia Sesión</p>
             </div>
-            <div className="container-form">
-              <label htmlFor="email">
-                  <p className="text-label">Correo</p>
-                  <input
-                  className="input-form"
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                  name="email"
-                  placeholder="ejemplo@ejemplo.com"
-                  />
-              </label>
-              <label htmlFor="password">
-                  <p className="text-label">Password</p>
-                  <input
-                  className="input-form"
-                  onChange={handleChange}
-                  type="password"
-                  name="passsword"
-                  placeholder="password"
-                  />
-              </label>
-              <button type="submit" className="login-button" disabled={disabled}>
-                  Ingresar
-              </button>
-              {/* <Link to="">Olvidé mi contraseña</Link> */}
+            <div className={`${Style.containerForm}`}>
+            <label htmlFor="email" >
+                <p className={`${Style.label}`}>Correo electrónico</p>
+                <input
+                className={`${Style.input}`}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                name="email"
+                placeholder="nombre@email.com"
+                />
+            </label>
+            <label htmlFor="password">
+                <p className={`${Style.label}`}>Contraseña</p>
+                <input
+                className={`${Style.input}`}
+                onChange={handleChange}
+                type="password"
+                name="passsword"
+                placeholder="contraseña123"
+                />
+            </label>
+            <Link to="/404" className={`${Style.forget}`}>¿Olvidaste tu contraseña?</Link>
+            <button type="submit" className={`${Style.btn}`} disabled={disabled}>
+                Ingresar
+            </button>
             </div>
           </form>
         </main>
-
+        </div>
+        <div className={`${Style.banner}`}></div>
       </div>
-      </section>
-
-      
   );
 };
 
