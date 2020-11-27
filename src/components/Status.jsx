@@ -20,7 +20,7 @@ export default function Status() {
     .then((doc) => {
       if (doc.exists) {
         setInit(() => doc.data());
-        console.log('Document data:', doc.data());
+        // console.log('Document data:', doc.data());
       } else {
         console.log('No such document!');
       }

@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import './workshop.css';
 import NavWriters from './NavWriters';
 import Notes from './Notes';
 import Comments from './Comments';
 import firebase from '../../firebase.config';
+import {getComments} from '../../API/crud';
 
 export const Workshop = (props) => {
     const {init, initID} = props;
@@ -21,8 +22,12 @@ export const Workshop = (props) => {
     const [notesBox, setNotesBox] =useState([]);
     const [comments, setComments] =useState(initialStateComment);
     const [commentsBox, setCommentsBox] =useState([]);
-    console.log(init);
-    console.log(initID);
+
+    useEffect(() => {
+        getComments(setCommentsBox, 'comments');
+        getComments(setNotesBox, 'notes');
+      }, []);
+
     return (
         <div>
             <span>{init.status}</span>
@@ -39,9 +44,9 @@ export const Workshop = (props) => {
                 <Comments 
                     comments={comments}
                     setComments={setComments}
+                    initialStateComment={initialStateComment} 
                     commentsBox={commentsBox}
                     setCommentsBox={setCommentsBox}
-                    initialStateComment={initialStateComment} 
                 />
             )  : (null)}
         </div>

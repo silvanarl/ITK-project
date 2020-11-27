@@ -5,11 +5,10 @@ import { useHistory } from 'react-router-dom';
 //import interkunaq from '../assets/interkunaq.jpeg';
 import { signIn } from '../API/auth';
 import '../components/general/loginStyled.css';
-import firebase from '../firebase.config.js'; 
+// import firebase from '../firebase.config.js'; 
 import 'firebase/storage';
 
-const storage = firebase.storage()
-console.log (storage)
+//const storage = firebase.storage()
 
 
 const Login = () => {

@@ -33,8 +33,6 @@ const filtered = allInitiatives.filter (iniciativa =>
             
             </div>
             <div className="container-cards">
-          
-          soy un componente
             {result.map((ele) => ( 
              <InitiativesCard ele ={ele} key={ele.id}/>
              ))}
