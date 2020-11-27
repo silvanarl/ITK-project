@@ -41,7 +41,6 @@ export default function Status() {
     <div className="container-status" id="status">
       <div className="title">{init.name}</div>
       <StatusNav setView={setView} />
-
       <div className="container-title-status">
         <div className="container-select-status">
         <h2 className="form-title">Información de la iniciativa</h2>

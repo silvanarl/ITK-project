@@ -15,12 +15,11 @@
     cursor: pointer;
 }
 
-
-.status-opt:active{
-    color: #05BE50;
-    border-bottom: 2px solid #05BE50;;
-}
-
 .status-opt:hover{
     color: #05BE50;
+}
+
+.status-opt:focus{
+    color: #05BE50;
+    border-bottom: 2px solid #05BE50;;
 }

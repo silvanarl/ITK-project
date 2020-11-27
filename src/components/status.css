@@ -5,6 +5,9 @@
   padding: 2.5rem;
   padding-left: 4.5rem;
 }
+.info-id-data{
+  margin-bottom: 30px;
+}
 
 .info-id-data{
   margin-bottom: 30px;
@@ -14,3 +17,9 @@
   margin-bottom: 15px;
   color: #0039A6;
 }
+
+.container-select-status{
+  display: flex;
+  
+}
+

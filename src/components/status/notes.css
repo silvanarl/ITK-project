@@ -22,6 +22,7 @@
 
 .textarea{
     width: 82%;
+/*     width: 100%; */
     margin-left: 3px;
     border: 1px solid rgba(15, 25, 30, 0.2);
     padding: 17px 11px;
@@ -39,6 +40,7 @@
 
 .mes-box{
     width: 82%;
+/*     width: 100%; */
     margin-left: 3px;
     border: 1px solid rgba(15, 25, 30, 0.2);
     padding: 20px 17px;

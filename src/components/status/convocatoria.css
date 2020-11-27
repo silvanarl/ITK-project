@@ -24,5 +24,10 @@
 }
 .container-url{
     display: flex;
+    flex-direction: column;
+}
+.url-div{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
