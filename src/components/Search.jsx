@@ -32,6 +32,7 @@ const Search = ({allInitiatives}) => {
                         type="text" 
                         onChange={(e) => setValue (e.target.value)}
                         className="input-value"
+                        placeholder = 'Bucar Iniciativas'
                     />
                     <div className="container-button-search">
                       <button className = "search-btn" 

@@ -5,20 +5,20 @@ import './indicator.css';
 const Indicators = ({allInitiatives}) => {
     return (
         <div>
-           <h1 className ="text1"> Indicadores </h1>
-
-           <div className="text2">  
-           <h2>Nùmero total de iniciativas {allInitiatives.length}</h2> 
-           {/* <h2> Nùmero de iniciativas por abogados </h2>
-           <h2>Nùmero de iniciativas segùn tipo de cambio</h2>
-
-           <label htmlFor="sele">
-                <select className = 'tipo'>
-                <option value="value1">Menor</option> 
-                <option value="value2">Mnor</option>
-                </select>
-            </label> */}
-           </div>
+            <div>
+                <h1 className ="text1"> Indicadores </h1>
+                <h2 className="hh"> {allInitiatives.length}</h2>  
+                <div className="graphi">  
+                
+                </div> <br></br>
+           </div>           <br></br>
+           <h2 className="hh"> 5 </h2> 
+           <div className='init'>
+           
+           </div >
+           <p > 
+           </p>
+         
         </div>
     )
 };
