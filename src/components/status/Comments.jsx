@@ -4,7 +4,7 @@ import {createComment } from '../../API/crud';
 
 
 const Comments = (props) => {
-    const {comments, setComments, commentsBox, initialStateComment } = props;
+    const {comments, setComments, commentsBox, initialStateComment, initID } = props;
     const catchComment = (e) => {
         const { name, value } = e.target;
         console.log(e.target.value);
@@ -33,14 +33,18 @@ const Comments = (props) => {
                 </textarea>
                 <button onClick={()=>sendComment(comments)}>Enviar</button>
             <div>
-                {console.log(commentsBox)}
-                {commentsBox.map((comment) => (
-                    <div key={comment.id}>
-                        <span>{comment.user}</span>
-                        <span>{comment.content}</span>
-                     {/* <span>{note.date}</span> */}
-                    </div>
-                ))}
+                {commentsBox.map((comment) => {
+                    switch (comment.idInitiative) {
+                        case initID:
+                            return (
+                                <div key={comment.id}>
+                                    <span>{comment.user}</span>
+                                    <span>{comment.content}</span>
+                                </div>
+                        )
+                        default:
+                    }
+                })}
             </div>
         </div>
     )
@@ -52,6 +56,7 @@ Comments.propTypes = {
     setComments: PropTypes.func.isRequired,
     setCommentsBox: PropTypes.func.isRequired,
     initialStateComment: PropTypes.object.isRequired,
+    initID: PropTypes.string.isRequired
 };
 
 export default Comments;

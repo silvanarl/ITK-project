@@ -72,7 +72,8 @@ export const getComments = (callback, collectionName) =>
           content: doc.data().content,
           id: doc.id,
           user: doc.data().user,
-          date: doc.data().date
+          date: doc.data().date,
+          idInitiative: doc.data().idInitiative
         };
         comments.push(objComment);
       });

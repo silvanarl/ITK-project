@@ -47,6 +47,7 @@ export const Workshop = (props) => {
                     initialStateComment={initialStateComment} 
                     commentsBox={commentsBox}
                     setCommentsBox={setCommentsBox}
+                    initID={initID}
                 />
             )  : (null)}
         </div>
