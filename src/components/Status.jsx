@@ -32,7 +32,7 @@ export default function Status() {
 
   return (
     <div className="container-status" id="status">
-      <div className="details-info-title">{init.name}</div>
+      <div className="title">{init.name}</div>
       <StatusNav setView={setView} />
       {view === 'convocatoria' ? (
         <Convocatoria obj={init} initID={initID} />

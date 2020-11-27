@@ -1,8 +1,26 @@
-.status-nav li{
-    display: flex;
-    border: 1px solid #000;
-    list-style: none;
-}
 .status-nav{
     display: flex;
+    width: 750px;
+    height: 64px;
+    border: 0;
+    list-style: none;
+    margin-top: 53px;
+    margin-bottom: 40px;
+    margin-left: 10%;
+}
+
+.status-opt{
+    padding: 12px 44px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.status-opt:active{
+    color: #05BE50;
+    border-bottom: 2px solid #05BE50;;
+}
+
+.status-opt:hover{
+    color: #05BE50;
 }

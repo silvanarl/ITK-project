@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {createComment } from '../../API/crud';
+import './writecomments.css';
+
 
 const WriteComments = (props) => {
     const {notes, setNotes, initialStateComment} = props;
@@ -18,9 +20,9 @@ const WriteComments = (props) => {
         console.log(' no content');
       };
     return (
-        <div>
-            <label htmlFor="">Escribe un comentario</label>
-            <form action="">
+        <div className="notes-container">
+            <label className="form-title" htmlFor="">Anotaciones</label>
+            <form className="f-textarea" action="">
                 <textarea 
                 name="content" 
                 value={notes.content}
@@ -29,9 +31,10 @@ const WriteComments = (props) => {
                 rows="5"
                 placeholder="Escribe una nota"
                 onChange={catchComment}
+                className="textarea"
                 >
                 </textarea>
-                <button onClick={() =>sendComment(notes)}>Enviar</button>
+                <button className="send-btn" onClick={() =>sendComment(notes)}>Enviar</button>
             </form>
         </div>
     )

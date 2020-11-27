@@ -1,7 +1,26 @@
+.cho-btn-status{
+    display: flex;
+    flex-direction: row;
+    padding: 0 20%;
+}
+
 .workshop-button{
-    width: 8rem;
-    height: 2rem;
+    width: 200px;
+    height: 168px;
     background-color: #0039A6;
     color: #fff;
-    margin: 1rem;
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #0039A6 0%, rgba(255, 255, 255, 0) 100%), rgba(5, 190, 80, 0.8);
+    border-radius: 4px;
+}
+
+.icon-button{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.workshop-button:hover{
+    background-color: #003aa6;
 }

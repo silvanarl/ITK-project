@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.description{
+    margin-top: 30px;
+}
+
+.search-box{
+    width: 668px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input{
+    height: 48px;
+    width: 600px;
+    border: 1px solid rgba(15, 25, 30, 0.2);
+    padding-left: 13px;
+    border-radius: 4px;
+}
+
+.search-btn{
+    width: 56px;
+    height: 48px;
+    border: none;
+    background: rgba(5, 190, 80, 0.8);
+    border-radius: 4px;
+    padding-top: 5px;
+}
+
+.mail{
+    display: none;
+}
+
+.break{
+    margin-top: 60px;
+}
