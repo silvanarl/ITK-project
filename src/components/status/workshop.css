@@ -33,4 +33,14 @@
 
 .workshop-button:hover{
     background-color: #003aa6;
+    width: 8rem;
+    height: 2.5rem;
+    background-color: #0039A6;
+    color: #fff;
+    margin: 1rem;
+    border-radius: 4px;
+}
+.icon-img{
+    width: 1.5rem;
+    height: 1.5rem;
 }
