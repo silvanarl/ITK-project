@@ -9,7 +9,7 @@ const Convocatoria = (props) => {
     return (
         <div>
             <h3 className="form-title">Información de la iniciativa</h3>
-            <p className="state-info-p">Esta iniciativa actualmente se encuentra en {initStatus.status}</p>
+            {/* <p className="state-info-p">Esta iniciativa actualmente se encuentra en {initStatus.status}</p> */}
             <div className="double-col">
                 <p className="item-show">Nº de Solicitud<span className="info-data">{init.application_number}</span></p>
                 <p className="item-show">Tipo de cambio<span className="info-data">{init.type_of_change}</span></p>

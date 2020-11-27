@@ -3,6 +3,7 @@ import React from 'react'
 import {useState } from 'react'
 //import SearchInput, {createFilter} from 'react-value-input'
 import InitiativesCard from './InitiativesCard';
+import './general/search.css';
 //
 
 const Search = ({allInitiatives}) => {
