@@ -12,9 +12,6 @@ import {signOut} from '../../API/auth';
 export const Header = () => {
     return (
         <div className={`navbar-head ${Style.navHead}`}>
-            {/* <picture className={`burger-box ${Style.burgerBox}`}>
-                <img className={`burger-icon${Style.burgerIcon}`} src='https://firebasestorage.googleapis.com/v0/b/interbank-project.appspot.com/o/assets%2Ficons%2Fburger-icon.png?alt=media&token=84636a1a-c8e2-4620-89d6-ad5eff849bf2' alt='buger icon'></img>
-            </picture> */}
             <picture className={`logo-box ${Style.logoBox}`}>
                 <img className={`logo-interbank ${Style.logo}`} src={interkunaq} alt='logo-interkunaq' ></img>
             </picture>
