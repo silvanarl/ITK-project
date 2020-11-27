@@ -20,6 +20,7 @@ const InitiativesCard = ({ele}) => {
         //         ))}
         // </div>
         <div className="individual-card" key={ele.id}>
+            {console.log(ele)}
             <span className="number">{ele.application_number}</span>
             <Link to={`/home/initiative:${ele.id}`}><span className="name">{ele.name}</span></Link>
             <p className="description">{ele.description}</p>

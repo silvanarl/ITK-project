@@ -17,7 +17,7 @@ export default function StatusNav(props) {
         Resumen workshop
       </li>
       <li className="status-opt" role="presentation" onClick={() => setView('comite')}>
-        Comité ERCP
+        Comité ERPC
       </li>
     </ul>
   );

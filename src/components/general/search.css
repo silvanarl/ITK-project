@@ -17,19 +17,21 @@
 
 input{
     height: 48px;
-    width: 600px;
+    width: 30rem;
     border: 1px solid rgba(15, 25, 30, 0.2);
     padding-left: 13px;
     border-radius: 4px;
 }
 
 .search-btn{
-    width: 56px;
-    height: 48px;
+    width: 4rem;
+    height: 2.8rem;
     border: none;
     background: rgba(5, 190, 80, 0.8);
     border-radius: 4px;
     padding-top: 5px;
+    color:#0039A6;
+    margin: 0.5rem;
 }
 
 .mail{
@@ -38,4 +40,20 @@ input{
 
 .break{
     margin-top: 60px;
+}
+.container-button-search{
+    display: flex;
+    justify-content: center;
+}
+.all-search-button{
+    width: 8rem;
+    height: 2.8rem;
+    background-color: rgba(5, 190, 80, 0.8);
+    color:#0039A6;
+    border-radius: 4px;
+    padding-top: 5px;
+    margin: 0.5rem;
+}
+.container-input-value{
+    display: flex;
 }
