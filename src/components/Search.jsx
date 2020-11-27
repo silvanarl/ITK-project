@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react'
 import {useState } from 'react'
-//import SearchInput, {createFilter} from 'react-value-input'
 import InitiativesCard from './InitiativesCard';
-//
+import './general/search.css';
+
 
 const Search = ({allInitiatives}) => {
   
@@ -32,12 +32,12 @@ const Search = ({allInitiatives}) => {
                         className="input-value"
                         placeholder = 'Bucar Iniciativas'
                     />
-                    <button className = "busqueda" 
-                    onClick= {searchInitiative}> buscaar </button>
- --------------
-                    <button className = "volver" 
-                    onClick= {bolo}> Iniciativas </button>
-                
+                    <div className="container-button-search">
+                      <button className = "search-btn" 
+                      onClick= {searchInitiative}> Buscar </button>
+                      <button className = "all-search-button" 
+                      onClick= {bolo}> Todas las Iniciativas </button>
+                    </div>
                 </div>
                 <div className="container-cards">
                 {result.map((ele) => ( 

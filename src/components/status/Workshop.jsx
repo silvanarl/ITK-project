@@ -39,6 +39,7 @@ export const Workshop = (props) => {
                     initialStateComment={initialStateComment} 
                     notesBox={notesBox}
                     setNotesBox={setNotesBox}
+                    initID={initID}
                 />
             ) : view === 'comentarios' ? (
                 <Comments 

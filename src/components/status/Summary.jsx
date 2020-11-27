@@ -35,6 +35,7 @@ const Summary = ({init, initID}) => {
                     initialStateComment={initialStateComment}
                     commentSumBox={commentSumBox}
                     setCommentSumBox={setCommentSumBox}
+                    initID={initID}
                 />
             ) : view === 'commits' ? (
                 <Commits
@@ -43,6 +44,7 @@ const Summary = ({init, initID}) => {
                     initialStateComment={initialStateComment}
                     commitsBox={commitsBox}
                     setCommitsBox={setCommitsBox}
+                    initID={initID}
                 />
             )  : (null)}
         </div>
