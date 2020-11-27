@@ -30,12 +30,12 @@ const Search = ({allInitiatives}) => {
                         type="text" 
                         onChange={(e) => setValue (e.target.value)}
                         className="input-value"
-                    />,
+                    />
                     <button className = "busqueda" 
                     onClick= {searchInitiative}> buscaar </button>
-    .......
+ --------------
                     <button className = "volver" 
-                    onClick= {bolo}> ver </button>
+                    onClick= {bolo}> Iniciativas </button>
                 
                 </div>
                 <div className="container-cards">
