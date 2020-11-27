@@ -7,8 +7,8 @@ import Home from './views/Home';
 import Search from './components/Search';
 import InitiativeStatus from './views/InitiativeStatus';
 import Spinner from './components/general/Spinner';
-import Initiatives from './components/Initiatives';
-import Status from './components/Status';
+// import Initiatives from './components/Initiatives';
+// import Status from './components/Status';
 
 function LoggedInRoute({ children, isUserLoggedIn, ...rest }) {
   return (
@@ -59,11 +59,6 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/Search">
-          <Search />
-        </Route>
-
-        <Route exact path="/initiative:id">
         <NonLoggedInRoute isUserLoggedIn={isUserLoggedIn} exact path="/">
           <Login />
         </NonLoggedInRoute>
@@ -75,15 +70,15 @@ const App = () => {
           exact
           path="/home/initiatives"
         >
-          <Initiatives />
+          <Search />
         </LoggedInRoute>
-        <LoggedInRoute
+        {/* <LoggedInRoute
           isUserLoggedIn={isUserLoggedIn}
           exact
           path="/home/initiatives:id"
         >
           <Status />
-        </LoggedInRoute>
+        </LoggedInRoute> */}
         <Route exact path="/home/initiative:id">
           <InitiativeStatus />
         </Route>

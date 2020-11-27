@@ -39,7 +39,6 @@ export const getAllInitiatives = (callback) =>
 
 export const getADocument = (docID, collectionName) => {
       const docRef = db.collection(collectionName).doc(docID);
-      console.log('docref', docRef.get());
       return docRef.get();
       
 };
@@ -61,3 +60,21 @@ export const createComment = (obj, collectionName) =>
     .catch((error) => {
       console.log('Ocurrió un error al enviar tu comentario', error);
   });
+
+export const getComments = (callback, collectionName) =>
+    db
+    .collection(collectionName)
+    .orderBy('date', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const comments = [];
+      querySnapshot.forEach((doc) => {
+        const objComment = {
+          content: doc.data().content,
+          id: doc.id,
+          user: doc.data().user,
+          date: doc.data().date
+        };
+        comments.push(objComment);
+      });
+      callback(comments);
+    });

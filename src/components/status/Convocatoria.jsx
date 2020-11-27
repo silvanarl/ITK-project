@@ -4,7 +4,6 @@ import { updateStatusDb } from '../../API/crud';
 
 const Convocatoria = (props) => {
     const {init, initID} = props;
-    console.log(initID);
     const [initStatus, setInitStatus] = useState(init);
     const updateStatus = (e) => {
         const { name, value } = e.target;
@@ -36,7 +35,6 @@ const Convocatoria = (props) => {
             <p>Mercado objetivo:{init.target_market}</p>
             <p>Proceso operativo asociado:{init.associated_operational_process}</p>
             <span>Tags: {init.tags}</span>
-            {console.log(initStatus)}
 
 
         </div>
