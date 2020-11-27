@@ -1,9 +1,12 @@
 .container-status{
-  /* margin-top: 1rem; */
+  margin-top: 1rem;
   width: 75%;
   background-color: #fff;
   padding: 2.5rem;
   padding-left: 4.5rem;
+}
+.info-id-data{
+  margin-bottom: 30px;
 }
 
 .info-id-data{
@@ -14,10 +17,9 @@
   margin-bottom: 15px;
   color: #0039A6;
 }
-.container-title-status{
 
-}
 .container-select-status{
   display: flex;
   
 }
+

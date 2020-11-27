@@ -25,9 +25,10 @@ const Commits = (props) => {
             console.log(' no content');
           };
     return (
-        <div>
-            <label className='form-title'htmlFor="">Escribe un comentario</label>
+        <div className='space-top'>
+            <label className='form-title space-top'htmlFor="">Escribe un comentario</label>
             <textarea 
+            className='textarea'
             name="content" 
             value={commits.content}
             id="" 
@@ -37,7 +38,7 @@ const Commits = (props) => {
             onChange={(e)=>catchComment(e)}
             >
             </textarea>
-            <button onClick={()=>sendComment(commits)}>Enviar</button>
+            <button className='send-btn' onClick={()=>sendComment(commits)}>Enviar</button>
             <div>
             {commitsBox.map((element) => {
                     switch (element.idInitiative) {

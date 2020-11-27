@@ -43,15 +43,18 @@ export default function Status() {
       <StatusNav setView={setView} />
       <div className="container-title-status">
         <div className="container-select-status">
-          <label htmlFor="">Puedes modificar el estado de esta iniciativa: </label>
-              <select onChange={(e)=> updateStatus(e)} name="status" id="">
+        <h2 className="form-title">Información de la iniciativa</h2>
+          <div className="item">
+          <span className="info-id-data">Esta iniciativa actualmente se encuentra en {init.status}</span>
+            <label className="label-mod" htmlFor="">Puedes modificar el estado de esta iniciativa</label>
+                <select className="large-select"onChange={(e)=> updateStatus(e)} name="status" id="">
                   <option value="Convocatoria a workshop">Convocatoria a Workshop</option>
                   <option value="Workshop">Workshop</option>
                   <option value="Resumen workshop">Resumen workshop</option>
                   <option value="Comite ERCP">Comité ERPC</option>
-              </select>
+                </select>
+              </div>
         </div>
-        <span>Esta iniciativa actualmente se encuentra en: {init.status}</span>
       </div>
       {view === 'convocatoria' ? (
         <Convocatoria init={init} initID={initID} />
