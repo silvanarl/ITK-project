@@ -1,11 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Indicators = () => {
+const Indicators = ({allInitiatives}) => {
+    console.log(allInitiatives.length)
     return (
         <div>
-            Aquí van los indicadores!
+           
         </div>
     )
+};
+Indicators.propTypes = {
+    allInitiatives: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default Indicators;
