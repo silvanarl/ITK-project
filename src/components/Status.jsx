@@ -7,7 +7,7 @@ import Convocatoria from './status/Convocatoria';
 import {Workshop} from './status/Workshop';
 import Comite from './status/Comite';
 import Summary from './status/Summary';
-import { getADocument } from '../API/crud';
+import { getADocument, updateStatusDb } from '../API/crud';
 
 export default function Status() {
   const [view, setView] = useState('');
@@ -20,7 +20,7 @@ export default function Status() {
     .then((doc) => {
       if (doc.exists) {
         setInit(() => doc.data());
-        console.log('Document data:', doc.data());
+        // console.log('Document data:', doc.data());
       } else {
         console.log('No such document!');
       }
@@ -30,10 +30,28 @@ export default function Status() {
     });
   }, [id]);
 
+  const updateStatus = (e) => {
+    const { name, value } = e.target;
+    const newStatus = e.target.value;
+    updateStatusDb(initID, newStatus);
+    setInit({ ...init, [name]: value });
+}
+
   return (
     <div className="container-status" id="status">
       <div className="title">{init.name}</div>
       <StatusNav setView={setView} />
+
+      <div>
+        <label htmlFor="">Puedes modificar el estado de esta iniciativa: </label>
+            <select onChange={(e)=> updateStatus(e)} name="status" id="">
+                <option value="Convocatoria a workshop">Convocatoria a Workshop</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Resumen workshop">Resumen workshop</option>
+                <option value="Comite ERCP">Comité ERCP</option>
+            </select>
+        <span>Esta iniciativa actualmente se encuentra en: {init.status}</span>
+      </div>
       {view === 'convocatoria' ? (
         <Convocatoria obj={init} initID={initID} />
       ) : view === 'workshop' ? (
