@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {createComment } from '../../API/crud';
+import { createComment } from '../../API/crud';
 
-const Notes = (props) => {
-    const {notes, setNotes, notesBox, initialStateComment, initID } = props;
-    
+const SumComments = (props) => {
+    const {commentSum,
+    setCommentSum,
+    initialStateComment,
+    commentSumBox,
+    initID
+    } = props;
+
     const catchComment = (e) => {
         const { name, value } = e.target;
         console.log(e.target.value);
-        setNotes({ ...notes, [name]: value });
+        setCommentSum({ ...commentSum, [name]: value });
     };
-
     const sendComment = (obj) => {
         if (obj.content !== '') {
-          createComment(obj, 'notes');
-          setNotes({ ...initialStateComment });
+          createComment(obj, 'summaryComments');
+          setCommentSum({ ...initialStateComment });
         }
         console.log(' no content');
       };
@@ -24,7 +28,7 @@ const Notes = (props) => {
             <label htmlFor="">Escribe un comentario</label>
             <textarea 
             name="content" 
-            value={notes.content}
+            value={commentSum.content}
             id="" 
             cols="30" 
             rows="5"
@@ -32,9 +36,9 @@ const Notes = (props) => {
             onChange={(e)=>catchComment(e)}
             >
             </textarea>
-            <button onClick={()=>sendComment(notes)}>Enviar</button>
+            <button onClick={()=>sendComment(commentSum)}>Enviar</button>
             <div>
-            {notesBox.map((element) => {
+                {commentSumBox.map((element) => {
                     switch (element.idInitiative) {
                         case initID:
                             return (
@@ -45,20 +49,18 @@ const Notes = (props) => {
                         )
                         default:
                     }
-                })}
+                })} 
             </div>
 
         </div>
     )
 };
 
-Notes.propTypes = {
-    notes: PropTypes.object.isRequired,
-    notesBox: PropTypes.arrayOf(PropTypes.object).isRequired,
-    setNotes: PropTypes.func.isRequired,
-    setNotesBox: PropTypes.func.isRequired,
+SumComments.propTypes = {
+    commentSum: PropTypes.object.isRequired,
+    commentSumBox: PropTypes.arrayOf(PropTypes.object).isRequired,
+    setCommentSum: PropTypes.func.isRequired,
     initialStateComment: PropTypes.object.isRequired,
     initID: PropTypes.string.isRequired
 };
-
-export default Notes;
+export default SumComments;

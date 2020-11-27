@@ -2,6 +2,8 @@ import React,  { useState} from 'react';
 import PropTypes from 'prop-types';
 import './formInitiative.css';
 import { sendInitiative } from '../API/crud';
+import useModal from '../hooks/useModal';
+import Modal from './Modal';
 
 const FormInitiative = (props) => {
     const { sheets } = props;
@@ -27,9 +29,7 @@ const FormInitiative = (props) => {
         type_of_change:''
     };
     const [initiative, setInitiative] = useState(initialState);  
-    // useEffect(() => {
-    //     console.log('render1');
-    // }, []);
+    const { isShowing, toggleModal } = useModal();
 
     const updateValue = (e) => {
         const { name, value } = e.target;
@@ -47,9 +47,10 @@ const FormInitiative = (props) => {
         setInitiative({ ...initiative, [name]: newValue });
     };
 
-    const sendToDb= (obj) => {
-        sendInitiative(obj);
-        return setInitiative({...initialState})
+    const sendToDb= () => {
+        sendInitiative(initiative);
+        setInitiative({...initialState});
+        return toggleModal();
     };
     return (
         <div className="container-initiative">
@@ -102,8 +103,9 @@ const FormInitiative = (props) => {
                         <input className="form-input" placeholder="Ejemplo: https://" type="text" name="pdf_url" onChange={(e)=> updateValue(e)}/>
                     </div>
                 </div>
-                <button className="btn" onClick={() => (sendToDb(initiative))} type="button">Subir Iniciativa</button>
+                <button className="btn" onClick={sendToDb} type="button">Subir Iniciativa</button>
             </form>
+          <Modal hide={toggleModal} isShowing={isShowing} />
         </div>
     )
 };
