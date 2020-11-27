@@ -22,3 +22,7 @@
 .capitalize{
     text-transform: capitalize;
 }
+.container-url{
+    display: flex;
+    justify-content: space-around;
+}

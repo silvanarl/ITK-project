@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // import { updateStatusDb } from '../../API/crud';
-import './convocatoria.css'
+import './convocatoria.css';
+import pdfIcon from '../../assets/SVG/IconoPDF.svg';
+import pptIcon from '../../assets/SVG/IconoPPT.svg';
 
 const Convocatoria = (props) => {
     const {init} = props;
@@ -25,6 +27,14 @@ const Convocatoria = (props) => {
             <p className="item-show">Mercado objetivo<span className="info-data">{init.target_market}</span></p>
             <p className="item-show">Proceso operativo asociado<span className="info-data">{init.associated_operational_process}</span></p>
             <p className="item-show">Tags<span className="info-data">{init.tags}</span></p>
+            <div className="container-url">
+                <a href={init.pdf_url} target="_blank" rel="noreferrer" >
+                    <img src={pdfIcon} alt=""/>
+                </a>
+                <a href={init.ppt_url} target="_blank" rel="noreferrer">
+                    <img src={pptIcon} alt=""/>
+                </a>
+            </div>
         </div>
     )
 };
