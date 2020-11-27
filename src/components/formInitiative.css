@@ -32,9 +32,9 @@
 }
 
 select{
-    width: 202px;
+    width: 13rem;
     height: 48px;
-    padding-left: 28px;
+    padding-left: .2rem;
     border: 1px solid rgba(15, 25, 30, 0.2);
     border-radius: 4px;
     padding-right: 30px;

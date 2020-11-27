@@ -14,10 +14,11 @@
   margin-bottom: 15px;
   color: #0039A6;
 }
-.container-title-status{
-
+.label-select-status{
+  padding-top: 1rem;
+  margin-right: 0.5rem;
 }
 .container-select-status{
   display: flex;
-  
+  margin-bottom: 1rem;
 }

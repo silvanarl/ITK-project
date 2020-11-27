@@ -28,7 +28,7 @@ const FormInitiative = (props) => {
         tags:[],
         comments: [],
         notes: [],
-        type_of_change:''
+        type_of_change:'Cambio menor'
     };
     const [initiative, setInitiative] = useState(initialState);  
     const { isShowing, toggleModal } = useModal();
