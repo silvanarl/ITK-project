@@ -13,9 +13,8 @@ const Search = ({allInitiatives}) => {
 
      const searchInitiative = ( ) => {
          
-const filtered = allInitiatives.filter (iniciativa => 
+const filtered = allInitiatives.filter(iniciativa => 
     iniciativa.tags.includes(value.toLowerCase()))
-
      setResult(filtered)
      };
      
@@ -46,47 +45,3 @@ Search.propTypes = {
     allInitiatives: PropTypes.arrayOf(PropTypes.object)
 }
 export default Search;
-
-
-
-
-// const KEYS_TO_FILTERS = ['user.name', 'subject']
-
-// class Search extends Component {
-    
-//   constructor (props) {
-//     super(props)
-    
-//   console.log(props)
-//     this.state = {
-//       searchTerm: ''
-//     }
-//     this.searchUpdated = this.searchUpdated.bind(this)
-
-  
-  
-  /*render () {
-    const filteredEmails = emails.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
-
-    return (
-      <div>
-        <SearchInput className="value-input" onChange={this.searchUpdated} />
-        {filteredEmails.map(email => {
-          return (
-            <div className="mail" key={email.id}>
-              <div className="from">{email.user.name}</div>
-              <div className="subject">{email.subject}</div>
-            </div>
-          )
-        })}
-      </div>
-    )
-  }
-
- /* searchUpdated (term) {
-    this.setState({searchTerm: term})
-  }
-}
-
-export default Search 
-*/
