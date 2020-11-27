@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createComment } from '../../API/crud';
+import './notes.css'
 
 const SumComments = (props) => {
     const {commentSum,
@@ -24,9 +25,10 @@ const SumComments = (props) => {
       };
 
     return (
-        <div>
-            <label htmlFor="">Escribe un comentario</label>
+        <div className='space-top'>
+            <label className='form-title'htmlFor="">Escribe un comentario</label>
             <textarea 
+            className='textarea'
             name="content" 
             value={commentSum.content}
             id="" 
@@ -36,15 +38,15 @@ const SumComments = (props) => {
             onChange={(e)=>catchComment(e)}
             >
             </textarea>
-            <button onClick={()=>sendComment(commentSum)}>Enviar</button>
+            <button className='send-btn' onClick={()=>sendComment(commentSum)}>Enviar</button>
             <div>
                 {commentSumBox.map((element) => {
                     switch (element.idInitiative) {
                         case initID:
                             return (
-                                <div key={element.id}>
-                                    <span>{element.user}</span>
-                                    <span>{element.content}</span>
+                                <div className='mes-box'key={element.id}>
+                                    <span className='mes-user'>{element.user}</span>
+                                    <span className='mes-content'>{element.content}</span>
                                 </div>
                         )
                         default:

@@ -5,3 +5,25 @@
   padding: 2.5rem;
   padding-left: 4.5rem;
 }
+.info-id-data{
+  margin-bottom: 30px;
+}
+
+.info-id-data{
+  margin-bottom: 30px;
+}
+
+.label-mod{
+  margin-bottom: 15px;
+  color: #0039A6;
+}
+.label-select-status{
+  padding-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.container-select-status{
+  display: flex;
+  margin-bottom: 1rem;
+}
+

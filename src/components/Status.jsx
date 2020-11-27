@@ -41,19 +41,19 @@ export default function Status() {
     <div className="container-status" id="status">
       <div className="title">{init.name}</div>
       <StatusNav setView={setView} />
-
-      <div>
-        <label htmlFor="">Puedes modificar el estado de esta iniciativa: </label>
-            <select onChange={(e)=> updateStatus(e)} name="status" id="">
-                <option value="Convocatoria a workshop">Convocatoria a Workshop</option>
-                <option value="Workshop">Workshop</option>
-                <option value="Resumen workshop">Resumen workshop</option>
-                <option value="Comite ERCP">Comité ERPC</option>
-            </select>
-        <span>Esta iniciativa actualmente se encuentra en: {init.status}</span>
+      <div className="container-title-status">
+        <div className="container-select-status">
+          <label className="label-select-status" htmlFor="">Puedes modificar el estado de esta iniciativa: </label>
+              <select onChange={(e)=> updateStatus(e)} name="status" id="">
+                  <option value="Convocatoria a workshop">Convocatoria a Workshop</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Resumen workshop">Resumen workshop</option>
+                  <option value="Comite ERCP">Comité ERPC</option>
+                </select>
+        </div>
       </div>
       {view === 'convocatoria' ? (
-        <Convocatoria obj={init} initID={initID} />
+        <Convocatoria init={init} initID={initID} />
       ) : view === 'workshop' ? (
         <Workshop init={init} initID={initID} />
       ) : view === 'summary' ? (

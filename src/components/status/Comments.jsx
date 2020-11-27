@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {createComment } from '../../API/crud';
-
+import './notes.css'
 
 const Comments = (props) => {
     const {comments, setComments, commentsBox, initialStateComment, initID } = props;
@@ -19,9 +19,10 @@ const Comments = (props) => {
         console.log(' no content');
       };
     return (
-        <div>
-            <label htmlFor="">Escribe un comentario</label>
+        <div className='space-top'>
+            <label className='form-title space-top' htmlFor="">Escribe un comentario</label>
                 <textarea 
+                className='textarea'
                 name="content" 
                 value={comments.content}
                 id="" 
@@ -31,16 +32,16 @@ const Comments = (props) => {
                 onChange={(e)=>catchComment(e)}
                 >
                 </textarea>
-                <button onClick={()=>sendComment(comments)}>Enviar</button>
+                <button className='send-btn' onClick={()=>sendComment(comments)}>Enviar</button>
             <div>
                 {commentsBox.map((comment) => {
                     switch (comment.idInitiative) {
                         case initID:
                             return (
-                                <div key={comment.id}>
-                                    <span>{comment.user}</span>
-                                    <span>{comment.content}</span>
-                                </div>
+                                <div className='mes-box'key={comment.id}>
+                                        <span className='mes-user'>{comment.user}</span>
+                                        <span className='mes-content'>{comment.content}</span>
+                                    </div>
                         )
                         default:
                     }

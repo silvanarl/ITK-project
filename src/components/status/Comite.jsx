@@ -5,6 +5,7 @@ import {
     createComment,
     getComments
     } from '../../API/crud';
+import './notes.css'
 
 
 const Comite = ({init, initID}) => {
@@ -36,9 +37,10 @@ const Comite = ({init, initID}) => {
         getComments(setComiteCommentBox, 'comiteComments');
       }, []);
     return (
-        <div>
-            <label htmlFor="">Escribe un comentario</label>
+        <div className='space-top'>
+            <label className='form-title space-top'htmlFor="">Escribe un comentario</label>
             <textarea 
+            className='textarea'
             name="content" 
             value={comiteComment.content}
             id="" 
@@ -48,15 +50,15 @@ const Comite = ({init, initID}) => {
             onChange={(e)=>catchComment(e)}
             >
             </textarea>
-            <button onClick={()=>sendComment(comiteComment)}>Enviar</button>
+            <button className='send-btn' onClick={()=>sendComment(comiteComment)}>Enviar</button>
             <div>
                 {comiteCommentBox.map((element) => {
                     switch (element.idInitiative) {
                         case initID:
                             return (
-                                <div key={element.id}>
-                                    <span>{element.user}</span>
-                                    <span>{element.content}</span>
+                                <div className='mes-box'key={element.id}>
+                                    <span className='mes-user'>{element.user}</span>
+                                    <span className='mes-content'>{element.content}</span>
                                 </div>
                         )
                         default:

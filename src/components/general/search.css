@@ -31,7 +31,7 @@ input{
     border-radius: 4px;
     padding-top: 5px;
     color:#0039A6;
-    margin: 0.5rem;
+    margin: 0 0.5rem;
 }
 
 .mail{
@@ -43,17 +43,17 @@ input{
 }
 .container-button-search{
     display: flex;
-    justify-content: center;
 }
 .all-search-button{
-    width: 8rem;
     height: 2.8rem;
     background-color: rgba(5, 190, 80, 0.8);
-    color:#0039A6;
+    color:#FFFFFF;
     border-radius: 4px;
-    padding-top: 5px;
-    margin: 0.5rem;
+    padding: 5px 32px;
+    margin: 0 0.5rem;
 }
 .container-input-value{
     display: flex;
+    
+    margin-bottom: 40px;
 }

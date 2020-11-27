@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {createComment } from '../../API/crud';
+import './notes.css'
 
 const Commits = (props) => {
     const {
@@ -24,9 +25,10 @@ const Commits = (props) => {
             console.log(' no content');
           };
     return (
-        <div>
-            <label htmlFor="">Escribe un comentario</label>
+        <div className='space-top'>
+            <label className='form-title space-top'htmlFor="">Escribe un comentario</label>
             <textarea 
+            className='textarea'
             name="content" 
             value={commits.content}
             id="" 
@@ -36,15 +38,15 @@ const Commits = (props) => {
             onChange={(e)=>catchComment(e)}
             >
             </textarea>
-            <button onClick={()=>sendComment(commits)}>Enviar</button>
+            <button className='send-btn' onClick={()=>sendComment(commits)}>Enviar</button>
             <div>
             {commitsBox.map((element) => {
                     switch (element.idInitiative) {
                         case initID:
                             return (
-                                <div key={element.id}>
-                                    <span>{element.user}</span>
-                                    <span>{element.content}</span>
+                                <div className='mes-box'key={element.id}>
+                                    <span className='mes-user'>{element.user}</span>
+                                    <span className='mes-content'>{element.content}</span>
                                 </div>
                         )
                         default:
