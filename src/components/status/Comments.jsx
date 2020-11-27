@@ -19,9 +19,10 @@ const Comments = (props) => {
         console.log(' no content');
       };
     return (
-        <div>
-            <label className='form-title' htmlFor="">Escribe un comentario</label>
+        <div className='space-top'>
+            <label className='form-title space-top' htmlFor="">Escribe un comentario</label>
                 <textarea 
+                className='textarea'
                 name="content" 
                 value={comments.content}
                 id="" 
@@ -31,7 +32,7 @@ const Comments = (props) => {
                 onChange={(e)=>catchComment(e)}
                 >
                 </textarea>
-                <button onClick={()=>sendComment(comments)}>Enviar</button>
+                <button className='send-btn' onClick={()=>sendComment(comments)}>Enviar</button>
             <div>
                 {commentsBox.map((comment) => {
                     switch (comment.idInitiative) {

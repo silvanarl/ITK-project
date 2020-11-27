@@ -49,9 +49,8 @@ export default function Status() {
                   <option value="Workshop">Workshop</option>
                   <option value="Resumen workshop">Resumen workshop</option>
                   <option value="Comite ERCP">Comité ERPC</option>
-              </select>
+                </select>
         </div>
-        <span>Esta iniciativa actualmente se encuentra en: {init.status}</span>
       </div>
       {view === 'convocatoria' ? (
         <Convocatoria init={init} initID={initID} />

@@ -25,9 +25,10 @@ const SumComments = (props) => {
       };
 
     return (
-        <div>
+        <div className='space-top'>
             <label className='form-title'htmlFor="">Escribe un comentario</label>
             <textarea 
+            className='textarea'
             name="content" 
             value={commentSum.content}
             id="" 
@@ -37,7 +38,7 @@ const SumComments = (props) => {
             onChange={(e)=>catchComment(e)}
             >
             </textarea>
-            <button onClick={()=>sendComment(commentSum)}>Enviar</button>
+            <button className='send-btn' onClick={()=>sendComment(commentSum)}>Enviar</button>
             <div>
                 {commentSumBox.map((element) => {
                     switch (element.idInitiative) {
