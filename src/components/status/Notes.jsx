@@ -16,7 +16,7 @@ const Notes = (props) => {
           createComment(obj, 'notes');
           setNotes({ ...initialStateComment });
         }
-        console.log(' no content');
+        console.log(obj);
       };
 
     return (
@@ -34,6 +34,7 @@ const Notes = (props) => {
             </textarea>
             <button onClick={()=>sendComment(notes)}>Enviar</button>
             <div>
+                {console.log(initID)}
             {notesBox.map((element) => {
                     switch (element.idInitiative) {
                         case initID:
