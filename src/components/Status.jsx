@@ -55,7 +55,7 @@ export default function Status() {
         <span>Esta iniciativa actualmente se encuentra en: {init.status}</span>
       </div>
       {view === 'convocatoria' ? (
-        <Convocatoria obj={init} initID={initID} />
+        <Convocatoria init={init} initID={initID} />
       ) : view === 'workshop' ? (
         <Workshop init={init} initID={initID} />
       ) : view === 'summary' ? (

@@ -49,13 +49,15 @@ const FormInitiative = (props) => {
         setInitiative({ ...initiative, [name]: newValue });
     };
 
-    const returnHome = () => history.push('/home/initiatives');
+    const returnHome = () => {
+        history.push('/home/initiatives');
+        history.go(0);
+    }
 
     const sendToDb= () => {
-        sendInitiative(initiative);
+        sendInitiative(initiative).then(returnHome);
         setInitiative({...initialState});
 
-        returnHome();
     };
     return (
         <div className="container-initiative">
